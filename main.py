@@ -1,6 +1,6 @@
 from lex import lexer
 
-arq = open('./lexica-testes/bubble_sort.tpp','r', encoding='utf-8')
+#arq = open('./lexica-testes/bubble_sort.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/Busca_Linear_1061992.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/fat.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/multiplicavetor.tpp','r', encoding='utf-8')
@@ -8,6 +8,7 @@ arq = open('./lexica-testes/bubble_sort.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/somavet.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/teste-1.tpp','r', encoding='utf-8')
 #arq = open('./lexica-testes/teste-2.tpp','r', encoding='utf-8')
+arq = open('./lexica-testes/testeErro.tpp','r', encoding='utf-8')
 
 data = arq.read()
 arq.close()
@@ -18,6 +19,6 @@ while True:
     tok = lexer.token()
     if not tok: 
         break 
-    print(i,"-",tok.type,tok.value, tok.lineno, tok.lexpos)      #print(tok.type, tok.value, tok.lineno, tok.lexpos)
-    
+    #print(i,"-",tok.type,tok.value, tok.lineno, tok.lexpos)      #print(tok.type, tok.value, tok.lineno, tok.lexpos)
+    print('( {}, {} )'.format(tok.type,tok.value))
     i+=1

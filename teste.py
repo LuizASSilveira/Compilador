@@ -94,10 +94,9 @@ def t_NUMERO_INTEIRO(t):
     return t
 
 
-
 teste = lex.lex()
 
-file = open('./lexica-testes/bubble_sort.tpp','r', encoding='utf-8')
+file = open('testeErro.tpp','r', encoding='utf-8')
 
 codigo = file.read()
 file.close()

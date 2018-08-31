@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-# List of token names.   This is always required
+#Palavras reservadas
 reserved = {
     'inteiro':'INTEIRO',
     'se':'SE',
@@ -14,80 +14,98 @@ reserved = {
     'leia':'LEIA', 
     'escreva':'ESCREVA',
 }
+
+# Lista com Tokens
 tokens = [
     'SOMA',
     'SUBTRACAO',
     'MULTIPLICACAO',
     'DIVISAO',
-    'ABREPAR',
-    'FECHAPAR',
+    'ABRE_PAR',
+    'FECHA_PAR',
     'IGUALDADE',
     'VIRGULA',
     'ATRIBUICAO',
     'MENOR',
     'MAIOR',
-    'MENORIGUAL',
-    'MAIORIGUAL',
-    'DOISPONTOS',
-    'ABRECOL',
-    'FECHACOL',
-    'ELOGICO',
-    'OULOGICO',
+    'MENOR_IGUAL',
+    'MAIOR_IGUAL',
+    'DOIS_PONTOS',
+    'ABRE_COL',
+    'FECHA_COL',
+    'E_LOGICO',
+    'OU_LOGICO',
     'NEGACAO',
     'NUMERO',
+    'NUM_INTEIRO',
+    'NUM_FLUTUANTE',
+    'NUM_NOTACAO_CIENTIFICA',
     'ID',
-
 ] +  list(reserved.values())
 
-# Regular expression rules for simple tokens
+# Expressão Regular
 t_SOMA    = r'\+'
 t_SUBTRACAO   = r'-'
 t_MULTIPLICACAO   = r'\*'
 t_DIVISAO  = r'/'
-t_ABREPAR  = r'\('
-t_FECHAPAR  = r'\)'
+t_ABRE_PAR  = r'\('
+t_FECHA_PAR  = r'\)'
 t_IGUALDADE = r'\='
 t_VIRGULA = r'\,'
 t_ATRIBUICAO = r'\:\='
-t_MENORIGUAL = r'\<\='
-t_MAIORIGUAL = r'\=\>'
+t_MENOR_IGUAL = r'\<\='
+t_MAIOR_IGUAL = r'\=\>'
 t_MENOR = r'\<'
 t_MAIOR = r'\>'
-t_DOISPONTOS = r'\:'
-t_ABRECOL = r'\['
-t_FECHACOL = r'\]'
-t_ELOGICO = r'\&\&'
-t_OULOGICO = r'\|\|'
+t_DOIS_PONTOS = r'\:'
+t_ABRE_COL = r'\['
+t_FECHA_COL = r'\]'
+t_E_LOGICO = r'\&\&'
+t_OU_LOGICO = r'\|\|'
 t_NEGACAO = r'\!'
 
-# A string containing ignored characters (spaces and tabs)
+
+# literals = "+-*/"
+
+
+#ingnorar caracters (spaces and tabs)
 t_ignore  = ' \t'
+
+#pegar comentarios e descartar o token
 def t_COMMENT(t):
     r'\{[^}]*[^{]*\}'
     pass
-    #Token discarded    
-
-# A regular expression rule with some action code
-def t_NUMERO(t):
-    r'[0-9]+(\.[0-9]*)?(E(\+|\-)?[0-9]+)?'
-    t.value = str(t.value)    
+    
+# Expressão regular para numeros (int,float, notação cientifica)
+def t_NUM_NOTACAO_CIENTIFICA(t):
+    r'[0-9]+(\.*[0-9]*)(e(\+|\-| )[0-9]+)'
     return t
 
+def t_NUM_FLUTUANTE(t):
+    r'[0-9]+\.[0-9]*'
+    t.value = float(t.value)    
+    return t
+
+def t_NUM_INTEIRO(t):
+    r'[0-9]+'
+    t.value = int(t.value)    
+    return t
+
+
+#Expressão regular para identificadores
 def t_ID(t):
-    r'[a-zA-Z_][a-zà-úA-ZÀ-Ú0-9_]*'
-    t.type = reserved.get(t.value,'ID')    # Check for reserved words 
+    r'[a-zA-Z_]+[a-zà-úA-ZÀ-Ú0-9_]*'
+    t.type = reserved.get(t.value,'ID')    # procura por palavras reservadas 
     return t
 
-# Error handling rule
+# Mensagem de error
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
-# Define a rule so we can track line numbers
+# Defina uma regra para rastrear o números de linha
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
-
-
 
 lexer = lex.lex()
