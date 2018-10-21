@@ -1,0 +1,159 @@
+strict graph G {
+	programa1 [label=programa]
+	lista_declaracoes2 [label=lista_declaracoes]
+	programa1 -- lista_declaracoes2
+	lista_declaracoes2 [label=lista_declaracoes]
+	declaracao3 [label=declaracao]
+	lista_declaracoes2 -- declaracao3
+	declaracao3 [label=declaracao]
+	declaracao_funcao4 [label=declaracao_funcao]
+	declaracao3 -- declaracao_funcao4
+	declaracao_funcao4 [label=declaracao_funcao]
+	tipo5 [label=tipo]
+	declaracao_funcao4 -- tipo5
+	inteiro5 [label=inteiro]
+	tipo5 -- inteiro5
+	tipo5 [label=tipo]
+	cabecalho6 [label=cabecalho]
+	declaracao_funcao4 -- cabecalho6
+	brasil6 [label=brasil]
+	cabecalho6 -- brasil6
+	cabecalho6 [label=cabecalho]
+	lista_parametros7 [label=lista_parametros]
+	cabecalho6 -- lista_parametros7
+	lista_parametros7 [label=lista_parametros]
+	vazio8 [label=vazio]
+	lista_parametros7 -- vazio8
+	vazio8 [label=vazio]
+	corpo8 [label=corpo]
+	cabecalho6 -- corpo8
+	corpo8 [label=corpo]
+	corpo9 [label=corpo]
+	corpo8 -- corpo9
+	corpo9 [label=corpo]
+	vazio10 [label=vazio]
+	corpo9 -- vazio10
+	vazio10 [label=vazio]
+	acao10 [label=acao]
+	corpo8 -- acao10
+	acao10 [label=acao]
+	expressao11 [label=expressao]
+	acao10 -- expressao11
+	expressao11 [label=expressao]
+	atribuicao12 [label=atribuicao]
+	expressao11 -- atribuicao12
+	atribuicao12 [label=atribuicao]
+	var13 [label=var]
+	atribuicao12 -- var13
+	a13 [label=a]
+	var13 -- a13
+	var13 [label=var]
+	expressao14 [label=expressao]
+	atribuicao12 -- expressao14
+	expressao14 [label=expressao]
+	expressao_logica15 [label=expressao_logica]
+	expressao14 -- expressao_logica15
+	expressao_logica15 [label=expressao_logica]
+	expressao_logica16 [label=expressao_logica]
+	expressao_logica15 -- expressao_logica16
+	expressao_logica16 [label=expressao_logica]
+	expressao_logica17 [label=expressao_logica]
+	expressao_logica16 -- expressao_logica17
+	expressao_logica17 [label=expressao_logica]
+	expressao_logica18 [label=expressao_logica]
+	expressao_logica17 -- expressao_logica18
+	expressao_logica18 [label=expressao_logica]
+	expressao_simples19 [label=expressao_simples]
+	expressao_logica18 -- expressao_simples19
+	expressao_simples19 [label=expressao_simples]
+	expressao_aditiva20 [label=expressao_aditiva]
+	expressao_simples19 -- expressao_aditiva20
+	expressao_aditiva20 [label=expressao_aditiva]
+	expressao_multiplicativa21 [label=expressao_multiplicativa]
+	expressao_aditiva20 -- expressao_multiplicativa21
+	expressao_multiplicativa21 [label=expressao_multiplicativa]
+	expressao_unaria22 [label=expressao_unaria]
+	expressao_multiplicativa21 -- expressao_unaria22
+	expressao_unaria22 [label=expressao_unaria]
+	fator23 [label=fator]
+	expressao_unaria22 -- fator23
+	fator23 [label=fator]
+	numero24 [label=numero]
+	fator23 -- numero24
+	numero24 [label=numero]
+	operador_logico19 [label=operador_logico]
+	expressao_logica17 -- operador_logico19
+	"||19" [label="||"]
+	operador_logico19 -- "||19"
+	operador_logico19 [label=operador_logico]
+	expressao_simples20 [label=expressao_simples]
+	expressao_logica17 -- expressao_simples20
+	expressao_simples20 [label=expressao_simples]
+	expressao_aditiva21 [label=expressao_aditiva]
+	expressao_simples20 -- expressao_aditiva21
+	expressao_aditiva21 [label=expressao_aditiva]
+	expressao_multiplicativa22 [label=expressao_multiplicativa]
+	expressao_aditiva21 -- expressao_multiplicativa22
+	expressao_multiplicativa22 [label=expressao_multiplicativa]
+	expressao_unaria23 [label=expressao_unaria]
+	expressao_multiplicativa22 -- expressao_unaria23
+	expressao_unaria23 [label=expressao_unaria]
+	fator24 [label=fator]
+	expressao_unaria23 -- fator24
+	fator24 [label=fator]
+	numero25 [label=numero]
+	fator24 -- numero25
+	825 [label=8]
+	numero25 -- 825
+	numero25 [label=numero]
+	operador_logico18 [label=operador_logico]
+	expressao_logica16 -- operador_logico18
+	"&&18" [label="&&"]
+	operador_logico18 -- "&&18"
+	operador_logico18 [label=operador_logico]
+	expressao_simples19 [label=expressao_simples]
+	expressao_logica16 -- expressao_simples19
+	expressao_simples19 [label=expressao_simples]
+	expressao_aditiva20 [label=expressao_aditiva]
+	expressao_simples19 -- expressao_aditiva20
+	expressao_aditiva20 [label=expressao_aditiva]
+	expressao_multiplicativa21 [label=expressao_multiplicativa]
+	expressao_aditiva20 -- expressao_multiplicativa21
+	expressao_multiplicativa21 [label=expressao_multiplicativa]
+	expressao_unaria22 [label=expressao_unaria]
+	expressao_multiplicativa21 -- expressao_unaria22
+	expressao_unaria22 [label=expressao_unaria]
+	fator23 [label=fator]
+	expressao_unaria22 -- fator23
+	fator23 [label=fator]
+	numero24 [label=numero]
+	fator23 -- numero24
+	424 [label=4]
+	numero24 -- 424
+	numero24 [label=numero]
+	operador_logico17 [label=operador_logico]
+	expressao_logica15 -- operador_logico17
+	"&&17" [label="&&"]
+	operador_logico17 -- "&&17"
+	operador_logico17 [label=operador_logico]
+	expressao_simples18 [label=expressao_simples]
+	expressao_logica15 -- expressao_simples18
+	expressao_simples18 [label=expressao_simples]
+	expressao_aditiva19 [label=expressao_aditiva]
+	expressao_simples18 -- expressao_aditiva19
+	expressao_aditiva19 [label=expressao_aditiva]
+	expressao_multiplicativa20 [label=expressao_multiplicativa]
+	expressao_aditiva19 -- expressao_multiplicativa20
+	expressao_multiplicativa20 [label=expressao_multiplicativa]
+	expressao_unaria21 [label=expressao_unaria]
+	expressao_multiplicativa20 -- expressao_unaria21
+	expressao_unaria21 [label=expressao_unaria]
+	fator22 [label=fator]
+	expressao_unaria21 -- fator22
+	fator22 [label=fator]
+	numero23 [label=numero]
+	fator22 -- numero23
+	223 [label=2]
+	numero23 -- 223
+	numero23 [label=numero]
+}

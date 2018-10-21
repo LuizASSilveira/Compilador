@@ -36,11 +36,11 @@ tokens = [
     'E_LOGICO',
     'OU_LOGICO',
     'NEGACAO',
-    'NUMERO',
     'NUM_INTEIRO',
     'NUM_FLUTUANTE',
     'NUM_NOTACAO_CIENTIFICA',
     'ID',
+    'DIFERENCA',
 ] +  list(reserved.values())
 
 # Expressão Regular
@@ -63,21 +63,17 @@ t_FECHA_COL = r'\]'
 t_E_LOGICO = r'\&\&'
 t_OU_LOGICO = r'\|\|'
 t_NEGACAO = r'\!'
-
+t_DIFERENCA = r'\<\>'
 
 # literals = "+-*/"
 
+t_ignore  = ' \t'                                #ingnorar caracters (spaces and tabs)
 
-#ingnorar caracters (spaces and tabs)
-t_ignore  = ' \t'
-
-#pegar comentarios e descartar o token
-def t_COMMENT(t):
+def t_COMMENT(t):                                #pegar comentarios e descartar o token
     r'\{[^}]*[^{]*\}'
     pass
-    
-# Expressão regular para numeros (int,float, notação cientifica)
-def t_NUM_NOTACAO_CIENTIFICA(t):
+
+def t_NUM_NOTACAO_CIENTIFICA(t):                # Expressão regular para numeros (int,float, notação cientifica)
     r'[0-9]+(\.*[0-9]*)(e(\+|\-| )[0-9]+)'
     return t
 
@@ -91,9 +87,7 @@ def t_NUM_INTEIRO(t):
     t.value = int(t.value)    
     return t
 
-
-#Expressão regular para identificadores
-def t_ID(t):
+def t_ID(t):                                    #Expressão regular para identificadores
     r'[a-zA-Z_]+[a-zà-úA-ZÀ-Ú0-9_]*'
     t.type = reserved.get(t.value,'ID')    # procura por palavras reservadas 
     return t

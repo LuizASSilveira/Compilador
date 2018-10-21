@@ -1,24 +1,35 @@
+from auxiliar import geraArvoreGraph, printArvore2
 from lex import lexer
+from Yacc import parser
+import sys
 
-#arq = open('./lexica-testes/bubble_sort.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/Busca_Linear_1061992.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/fat.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/multiplicavetor.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/primo.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/somavet.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/teste-1.tpp','r', encoding='utf-8')
-#arq = open('./lexica-testes/teste-2.tpp','r', encoding='utf-8')
-arq = open('./lexica-testes/testeErro.tpp','r', encoding='utf-8')
+def lexico(cod):
+    lexer.input(cod)
+    i = 0
+    print('\n')
+    while True:
+        tok = lexer.token()
+        if not tok:
+            break
+        print('( {}, {} )'.format(tok.type,tok.value)) #print(tok.type, tok.value, tok.lineno, tok.lexpos
+        i += 1
+    print('\n')
 
+def sintatico(cod, bol):
+    result = parser.parse(data)
+    printArvore2(result)    
+    if(bol):
+        geraArvoreGraph(result)
+
+arq = open(sys.argv[1],'r', encoding='utf-8')
 data = arq.read()
 arq.close()
 
-lexer.input(data)
-i = 0
-while True:
-    tok = lexer.token()
-    if not tok: 
-        break 
-    #print(i,"-",tok.type,tok.value, tok.lineno, tok.lexpos)      #print(tok.type, tok.value, tok.lineno, tok.lexpos)
-    print('( {}, {} )'.format(tok.type,tok.value))
-    i+=1
+try:
+    if(sys.argv[2]):
+        if(sys.argv[2] == '1'):
+            lexico(data)
+        elif(sys.argv[2] == '2'):
+            sintatico(data,True)
+except:
+    print('error')
