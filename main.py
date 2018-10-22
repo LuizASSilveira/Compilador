@@ -1,4 +1,4 @@
-from auxiliar import geraArvoreGraph, printArvore2
+from auxiliar import geraArvoreGraph as printArvore
 from lex import lexer
 from Yacc import parser
 import sys
@@ -17,19 +17,22 @@ def lexico(cod):
 
 def sintatico(cod, bol):
     result = parser.parse(data)
-    printArvore2(result)    
-    if(bol):
-        geraArvoreGraph(result)
+    printArvore(result, bol)
 
 arq = open(sys.argv[1],'r', encoding='utf-8')
 data = arq.read()
 arq.close()
 
 try:
-    if(sys.argv[2]):
-        if(sys.argv[2] == '1'):
-            lexico(data)
-        elif(sys.argv[2] == '2'):
-            sintatico(data,True)
-except:
-    print('error')
+    if(sys.argv.__len__() <= 2):
+        lexico(data)
+        sintatico(data, True)
+    else:
+        if(sys.argv[1]):
+            if(sys.argv[1] == '1'):
+                lexico(data)
+            elif(sys.argv[2] == '2'):
+                sintatico(data,True)
+
+except IndexError as er:
+    print('error = ', er)

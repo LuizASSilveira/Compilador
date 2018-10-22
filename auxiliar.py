@@ -1,5 +1,4 @@
 from graphviz import Graph
-
 class Tree:
     def __init__(self, typeNode='', child=[], value=''):
         self.type = typeNode
@@ -9,57 +8,39 @@ class Tree:
     def __str__(self):
         return self.type
 
-# def printArvore(no, esp=''):
-#         if(no):
-#             print(esp, no.type, no.value)
-#         for filho in no.child:
-#             printArvore(filho, esp + '*')
-
-def printArvore2(no, esp='*'):
+def printArvore(no, esp='| ', i=0):
+    
     if(not no):
         return
+    
     print(esp, no.type, no.value)
-    # for filho in no.child:
-    #     print(esp + '--', filho, filho.value)
+    
     for filho in no.child:
-        printArvore2(filho, esp + '*')
+        printArvore(filho, esp + '| ',i+1)
 
-def desenhagrafico(node, grafico, i):
+def desenhagrafico(node, grafico,i=0):
     if(not node):
         return
 
-    grafico.node(node.type + str(i), node.type)
-    pai = str(i)
+    pai = str(id(node))
+    grafico.node(pai, node.type)
     
     for son in node.child:
-        i += 1           
-        grafico.node(son.type + str(i), son.type)
-        grafico.edge(node.type + pai, son.type + str(i))
-        
+        filho = str(id(son))
+        grafico.node(filho, son.type)
+        grafico.edge(pai, filho)
+
         if(son.value):
-            grafico.node(str(son.value)+str(i), str(son.value))
-            grafico.edge(son.type + str(i), str(son.value)+str(i))
+            neto = str( id(pai) + id(son)) + str(i)
+            grafico.node(neto, str(son.value))
+            grafico.edge(filho, neto)
+        desenhagrafico(son, grafico,i+1)
 
-        desenhagrafico(son, grafico, i)
-
-
-# def desenhagrafico(node, grafico, i):
-#     if(not node):
-#         return
-#     pai = str(id(node.type))+str(i)
-#     grafico.node(pai, node.type)
-
-#     for son in node.child:
-#         i+=1
-#         filho = str(id(son.type))+str(i)
-#         grafico.node(filho, son.type)
-        
-#         grafico.edge(pai,filho)
-#         desenhagrafico(son, grafico, i)
-
-
-def geraArvoreGraph(no):
-    grafico = Graph('G', filename='Tree.gv', strict=True)
-    desenhagrafico(no, grafico, i=1)
-    grafico.view()
+def geraArvoreGraph(no,bol):
+    printArvore(no)
+    if(bol == True and no ) :
+        grafico = Graph('G', filename='Tree.gv', strict=True)
+        desenhagrafico(no, grafico)
+        grafico.node_attr.update(color='lightblue2', style='filled')
+        grafico.view()
 

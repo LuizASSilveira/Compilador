@@ -323,12 +323,12 @@ def p_lista_argumentos(p):
 
 def p_error(p):
     if p:
-         print("Error", p)
-         parser.errok()
+        print("Error", p)
+        parser.errok()
     else:
-         print("Syntax error at EOF")
+        print("Syntax error at EOF")
 
 # Build the parser
-parser = yacc.yacc(write_tables=False)
-#parser = yacc.yacc()
+parser = yacc.yacc()
+#parser = yacc.yacc(write_tables=False)
 
