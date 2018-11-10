@@ -10,8 +10,8 @@ inteiro principal()
 		int := i/2
 		resultado := f - int
 		
-		se  resultado > 0 então
-			escreva(i)
+		se  resultado > 0
+			escreva (i)
 		fim
 		i := i+1
 	até i <= digitado

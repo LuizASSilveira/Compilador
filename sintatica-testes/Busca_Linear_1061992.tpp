@@ -16,7 +16,7 @@ inteiro busca(inteiro: n)
 		i := i + 1
 	até i = 20
 
-	retorna retorno
+	retorna(retorno)
 fim
 
 inteiro principal()

@@ -1,10 +1,10 @@
-inteiro: a
-inteiro: b
-inteiro brasil()
-	a := 10
-	b := 5
-	c := a + b
-	se c < 10 então
-		escreva(c)
-	fim
+inteiro principal()
+
+	luiz := 10
+	daniel := 15 + 4 - 3 + 8 + 10
+	dougras := 10 + vet[0]
+	end = a + b
+	
+   	
+    retorna(0)
 fim

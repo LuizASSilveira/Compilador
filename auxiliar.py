@@ -31,16 +31,18 @@ def desenhagrafico(node, grafico,i=0):
         grafico.edge(pai, filho)
 
         if(son.value):
-            neto = str( id(pai) + id(son)) + str(i)
+            neto = str(id(pai) + id(son) + id(son.value)) + str(i)
             grafico.node(neto, str(son.value))
             grafico.edge(filho, neto)
         desenhagrafico(son, grafico,i+1)
 
-def geraArvoreGraph(no,bol):
-    printArvore(no)
-    if(bol == True and no ) :
-        grafico = Graph('G', filename='Tree.gv', strict=True)
-        desenhagrafico(no, grafico)
-        grafico.node_attr.update(color='lightblue2', style='filled')
-        grafico.view()
+def geraArvoreGraph(no, Erros, bol):
+    if(bol):
+        if not Erros :
+            printArvore(no)
+            if(no) :
+                grafico = Graph('G', filename='Tree.gv', strict=True)
+                desenhagrafico(no, grafico)
+                grafico.node_attr.update(color='lightblue2', style='filled')
+                grafico.view()
 

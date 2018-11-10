@@ -2,6 +2,11 @@
 import ply.yacc as yacc
 from lex import tokens
 from auxiliar import Tree
+import sys
+import colorama
+
+contemErros = False
+linhasErros = []
 
 precedence = (
     ('left', 'IGUALDADE', 'MAIOR_IGUAL', 'MENOR_IGUAL', 'MAIOR', 'MENOR', 'ATRIBUICAO'),
@@ -322,13 +327,27 @@ def p_lista_argumentos(p):
         p[0] = Tree('lista_argumentos', [p[1]])
 
 def p_error(p):
-    if p:
-        print("Error", p)
+    global contemErros
+    contemErros = True
+
+    colorama.init()
+    if(p != None):
+        data = abreArquivo()
+        linha = p.lineno
+    
+        if(not linhasErros.__contains__(linha)):
+            linhasErros.append(linha)
+            print(colorama.Fore.LIGHTYELLOW_EX + "  File: '{0}', line: {1}".format(sys.argv[0],  linha))
+            print(colorama.Fore.LIGHTRED_EX + "          " + data[linha - 1].replace(' ',''), colorama.Style.RESET_ALL)          
         parser.errok()
     else:
-        print("Syntax error at EOF")
+        print(colorama.Fore.LIGHTYELLOW_EX + "  Syntax error at EOF")
 
-# Build the parser
+    
+def abreArquivo():
+    arq = open(sys.argv[1], 'r', encoding='utf-8')
+    data = arq.readlines()
+    return data
+
+
 parser = yacc.yacc()
-#parser = yacc.yacc(write_tables=False)
-
