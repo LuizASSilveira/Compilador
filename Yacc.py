@@ -127,7 +127,10 @@ def p_parametro(p):
     parametro : tipo DOIS_PONTOS ID
                 | parametro ABRE_COL FECHA_COL
     '''
-    p[0] = Tree('parametro', [p[1]], p[3])
+    if(p[2] == 'DOIS_PONTOS'):
+        p[0] = Tree('parametro', [p[1]], p[3])
+    else: 
+        p[0] = Tree('parametro', [p[1]])
 
 def p_corpo(p):
     '''
@@ -342,7 +345,8 @@ def p_error(p):
         parser.errok()
     else:
         print(colorama.Fore.LIGHTYELLOW_EX + "  Syntax error at EOF")
-
+    
+        
     
 def abreArquivo():
     arq = open(sys.argv[1], 'r', encoding='utf-8')

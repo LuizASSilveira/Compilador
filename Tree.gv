@@ -1,407 +1,1501 @@
 strict graph G {
 	node [color=lightblue2 style=filled]
-	51077520 [label=programa]
-	51077456 [label=declaracao_funcao]
-	51077520 -- 51077456
-	51077456 [label=declaracao_funcao]
-	51077392 [label=tipo]
-	51077456 -- 51077392
-	1532400481 [label=inteiro]
-	51077392 -- 1532400481
-	51077392 [label=tipo]
-	51081136 [label=cabecalho]
-	51077456 -- 51081136
-	1153464081 [label=principal]
-	51081136 -- 1153464081
-	51081136 [label=cabecalho]
-	18342256 [label=lista_parametros]
-	51081136 -- 18342256
-	18342256 [label=lista_parametros]
-	51077584 [label=vazio]
-	18342256 -- 51077584
-	51077584 [label=vazio]
-	51196272 [label=corpo]
-	51081136 -- 51196272
-	51196272 [label=corpo]
-	51080656 [label=corpo]
-	51196272 -- 51080656
-	51080656 [label=corpo]
-	51080464 [label=corpo]
-	51080656 -- 51080464
-	51080464 [label=corpo]
-	51079504 [label=corpo]
-	51080464 -- 51079504
-	51079504 [label=corpo]
-	51078288 [label=corpo]
-	51079504 -- 51078288
-	51078288 [label=corpo]
-	51077488 [label=corpo]
-	51078288 -- 51077488
-	51077488 [label=corpo]
-	51077776 [label=vazio]
-	51077488 -- 51077776
-	51077776 [label=vazio]
-	51078256 [label=acao]
-	51078288 -- 51078256
-	51078256 [label=acao]
-	51077872 [label=expressao]
-	51078256 -- 51077872
-	51077872 [label=expressao]
-	51078192 [label=atribuicao]
-	51077872 -- 51078192
-	51078192 [label=atribuicao]
-	51077712 [label=var]
-	51078192 -- 51077712
-	15337611210 [label=luiz]
-	51077712 -- 15337611210
-	51077712 [label=var]
-	51078160 [label=expressao]
-	51078192 -- 51078160
-	51078160 [label=expressao]
-	51078128 [label=expressao_logica]
-	51078160 -- 51078128
-	51078128 [label=expressao_logica]
-	51078096 [label=expressao_simples]
-	51078128 -- 51078096
-	51078096 [label=expressao_simples]
-	51078064 [label=expressao_aditiva]
-	51078096 -- 51078064
-	51078064 [label=expressao_aditiva]
-	51078032 [label=expressao_multiplicativa]
-	51078064 -- 51078032
-	51078032 [label=expressao_multiplicativa]
-	51077616 [label=expressao_unaria]
-	51078032 -- 51077616
-	51077616 [label=expressao_unaria]
-	51077648 [label=fator]
-	51077616 -- 51077648
-	51077648 [label=fator]
-	51077808 [label=numero]
-	51077648 -- 51077808
-	174051780817 [label=10]
-	51077808 -- 174051780817
-	51077808 [label=numero]
-	51079472 [label=acao]
-	51079504 -- 51079472
-	51079472 [label=acao]
-	51078224 [label=expressao]
-	51079472 -- 51078224
-	51078224 [label=expressao]
-	51079216 [label=atribuicao]
-	51078224 -- 51079216
-	51079216 [label=atribuicao]
-	51077840 [label=var]
-	51079216 -- 51077840
-	1533770249 [label=daniel]
-	51077840 -- 1533770249
-	51077840 [label=var]
-	51079440 [label=expressao]
-	51079216 -- 51079440
-	51079440 [label=expressao]
-	51079408 [label=expressao_logica]
-	51079440 -- 51079408
-	51079408 [label=expressao_logica]
-	51079184 [label=expressao_simples]
-	51079408 -- 51079184
-	51079184 [label=expressao_simples]
-	51079344 [label=expressao_aditiva]
-	51079184 -- 51079344
-	51079344 [label=expressao_aditiva]
-	51079120 [label=expressao_aditiva]
-	51079344 -- 51079120
-	51079120 [label=expressao_aditiva]
-	51078928 [label=expressao_aditiva]
-	51079120 -- 51078928
-	51078928 [label=expressao_aditiva]
-	51078736 [label=expressao_aditiva]
-	51078928 -- 51078736
-	51078736 [label=expressao_aditiva]
-	51078480 [label=expressao_aditiva]
-	51078736 -- 51078480
-	51078480 [label=expressao_aditiva]
-	51078448 [label=expressao_multiplicativa]
-	51078480 -- 51078448
-	51078448 [label=expressao_multiplicativa]
-	51077904 [label=expressao_unaria]
-	51078448 -- 51077904
-	51077904 [label=expressao_unaria]
-	51078384 [label=fator]
-	51077904 -- 51078384
-	51078384 [label=fator]
-	51078000 [label=numero]
-	51078384 -- 51078000
-	174051832020 [label=15]
-	51078000 -- 174051832020
-	51078000 [label=numero]
-	51078512 [label=operador_soma]
-	51078736 -- 51078512
-	11568235216 [label="+"]
-	51078512 -- 11568235216
-	51078512 [label=operador_soma]
-	51078704 [label=expressao_multiplicativa]
-	51078736 -- 51078704
-	51078704 [label=expressao_multiplicativa]
-	51078640 [label=expressao_unaria]
-	51078704 -- 51078640
-	51078640 [label=expressao_unaria]
-	51078608 [label=fator]
-	51078640 -- 51078608
-	51078608 [label=fator]
-	51078416 [label=numero]
-	51078608 -- 51078416
-	174051864019 [label=4]
-	51078416 -- 174051864019
-	51078416 [label=numero]
-	51078544 [label=operador_soma]
-	51078928 -- 51078544
-	10515347215 [label="-"]
-	51078544 -- 10515347215
-	51078544 [label=operador_soma]
-	51078896 [label=expressao_multiplicativa]
-	51078928 -- 51078896
-	51078896 [label=expressao_multiplicativa]
-	51078576 [label=expressao_unaria]
-	51078896 -- 51078576
-	51078576 [label=expressao_unaria]
-	51078864 [label=fator]
-	51078576 -- 51078864
-	51078864 [label=fator]
-	51078672 [label=numero]
-	51078864 -- 51078672
-	174051856018 [label=3]
-	51078672 -- 174051856018
-	51078672 [label=numero]
-	51078800 [label=operador_soma]
-	51079120 -- 51078800
-	11568248014 [label="+"]
-	51078800 -- 11568248014
-	51078800 [label=operador_soma]
-	51079088 [label=expressao_multiplicativa]
-	51079120 -- 51079088
-	51079088 [label=expressao_multiplicativa]
-	51078832 [label=expressao_unaria]
-	51079088 -- 51078832
-	51078832 [label=expressao_unaria]
-	51079056 [label=fator]
-	51078832 -- 51079056
-	51079056 [label=fator]
-	51078768 [label=numero]
-	51079056 -- 51078768
-	174051881617 [label=8]
-	51078768 -- 174051881617
-	51078768 [label=numero]
-	51078992 [label=operador_soma]
-	51079344 -- 51078992
-	11568259213 [label="+"]
-	51078992 -- 11568259213
-	51078992 [label=operador_soma]
-	51079312 [label=expressao_multiplicativa]
-	51079344 -- 51079312
-	51079312 [label=expressao_multiplicativa]
-	51079024 [label=expressao_unaria]
-	51079312 -- 51079024
-	51079024 [label=expressao_unaria]
-	51079248 [label=fator]
-	51079024 -- 51079248
-	51079248 [label=fator]
-	51078960 [label=numero]
-	51079248 -- 51078960
-	174051908016 [label=10]
-	51078960 -- 174051908016
-	51078960 [label=numero]
-	51080432 [label=acao]
-	51080464 -- 51080432
-	51080432 [label=acao]
-	51079376 [label=expressao]
-	51080432 -- 51079376
-	51079376 [label=expressao]
-	51079792 [label=atribuicao]
-	51079376 -- 51079792
-	51079792 [label=atribuicao]
-	51077936 [label=var]
-	51079792 -- 51077936
-	1533781848 [label=dougras]
-	51077936 -- 1533781848
-	51077936 [label=var]
-	51080400 [label=expressao]
-	51079792 -- 51080400
-	51080400 [label=expressao]
-	51080368 [label=expressao_logica]
-	51080400 -- 51080368
-	51080368 [label=expressao_logica]
-	51079760 [label=expressao_simples]
-	51080368 -- 51079760
-	51079760 [label=expressao_simples]
-	51080240 [label=expressao_aditiva]
-	51079760 -- 51080240
-	51080240 [label=expressao_aditiva]
-	51079696 [label=expressao_aditiva]
-	51080240 -- 51079696
-	51079696 [label=expressao_aditiva]
-	51079664 [label=expressao_multiplicativa]
-	51079696 -- 51079664
-	51079664 [label=expressao_multiplicativa]
-	51078320 [label=expressao_unaria]
-	51079664 -- 51078320
-	51078320 [label=expressao_unaria]
-	51079600 [label=fator]
-	51078320 -- 51079600
-	51079600 [label=fator]
-	51079280 [label=numero]
-	51079600 -- 51079280
-	174051956016 [label=10]
-	51079280 -- 174051956016
-	51079280 [label=numero]
-	51079728 [label=operador_soma]
-	51080240 -- 51079728
-	11568308812 [label="+"]
-	51079728 -- 11568308812
-	51079728 [label=operador_soma]
-	51080208 [label=expressao_multiplicativa]
-	51080240 -- 51080208
-	51080208 [label=expressao_multiplicativa]
-	51080336 [label=expressao_unaria]
-	51080208 -- 51080336
-	51080336 [label=expressao_unaria]
-	51079824 [label=fator]
-	51080336 -- 51079824
-	51079824 [label=fator]
-	51079920 [label=var]
-	51079824 -- 51079920
-	15338175215 [label=vet]
-	51079920 -- 15338175215
-	51079920 [label=var]
-	51080176 [label=indice]
-	51079920 -- 51080176
-	51080176 [label=indice]
-	51080144 [label=expressao]
-	51080176 -- 51080144
-	51080144 [label=expressao]
-	51080112 [label=expressao_logica]
-	51080144 -- 51080112
-	51080112 [label=expressao_logica]
-	51080080 [label=expressao_simples]
-	51080112 -- 51080080
-	51080080 [label=expressao_simples]
-	51080048 [label=expressao_aditiva]
-	51080080 -- 51080048
-	51080048 [label=expressao_aditiva]
-	51080016 [label=expressao_multiplicativa]
-	51080048 -- 51080016
-	51080016 [label=expressao_multiplicativa]
-	51079888 [label=expressao_unaria]
-	51080016 -- 51079888
-	51079888 [label=expressao_unaria]
-	51079952 [label=fator]
-	51079888 -- 51079952
-	51079952 [label=fator]
-	51079632 [label=numero]
-	51079952 -- 51079632
-	51079632 [label=numero]
-	51080912 [label=acao]
-	51080656 -- 51080912
-	51080912 [label=acao]
-	51081200 [label=expressao]
-	51080912 -- 51081200
-	51081200 [label=expressao]
-	51080624 [label=expressao_logica]
-	51081200 -- 51080624
-	51080624 [label=expressao_logica]
-	51080880 [label=expressao_simples]
-	51080624 -- 51080880
-	51080880 [label=expressao_simples]
-	51080560 [label=expressao_simples]
-	51080880 -- 51080560
-	51080560 [label=expressao_simples]
-	51080528 [label=expressao_aditiva]
-	51080560 -- 51080528
-	51080528 [label=expressao_aditiva]
-	51079536 [label=expressao_multiplicativa]
-	51080528 -- 51079536
-	51079536 [label=expressao_multiplicativa]
-	51079984 [label=expressao_unaria]
-	51079536 -- 51079984
-	51079984 [label=expressao_unaria]
-	51080304 [label=fator]
-	51079984 -- 51080304
-	51080304 [label=fator]
-	51078352 [label=var]
-	51080304 -- 51078352
-	15337992013 [label=end]
-	51078352 -- 15337992013
-	51078352 [label=var]
-	51080592 [label=operador_relacional]
-	51080880 -- 51080592
-	1053579048 [label="="]
-	51080592 -- 1053579048
-	51080592 [label=operador_relacional]
-	51081104 [label=expressao_aditiva]
-	51080880 -- 51081104
-	51081104 [label=expressao_aditiva]
-	51080816 [label=expressao_aditiva]
-	51081104 -- 51080816
-	51080816 [label=expressao_aditiva]
-	51080784 [label=expressao_multiplicativa]
-	51080816 -- 51080784
-	51080784 [label=expressao_multiplicativa]
-	51080720 [label=expressao_unaria]
-	51080784 -- 51080720
-	51080720 [label=expressao_unaria]
-	51080688 [label=fator]
-	51080720 -- 51080688
-	51080688 [label=fator]
-	51080496 [label=var]
-	51080688 -- 51080496
-	10520072013 [label=a]
-	51080496 -- 10520072013
-	51080496 [label=var]
-	51080848 [label=operador_soma]
-	51081104 -- 51080848
-	1156843289 [label="+"]
-	51080848 -- 1156843289
-	51080848 [label=operador_soma]
-	51081072 [label=expressao_multiplicativa]
-	51081104 -- 51081072
-	51081072 [label=expressao_multiplicativa]
-	51080976 [label=expressao_unaria]
-	51081072 -- 51080976
-	51080976 [label=expressao_unaria]
-	51080944 [label=fator]
-	51080976 -- 51080944
-	51080944 [label=fator]
-	51080752 [label=var]
-	51080944 -- 51080752
-	10523424012 [label=b]
-	51080752 -- 10523424012
-	51080752 [label=var]
-	51081040 [label=acao]
-	51196272 -- 51081040
-	51081040 [label=acao]
-	51196208 [label=retorna]
-	51081040 -- 51196208
-	51196208 [label=retorna]
-	51196176 [label=expressao]
-	51196208 -- 51196176
-	51196176 [label=expressao]
-	51196144 [label=expressao_logica]
-	51196176 -- 51196144
-	51196144 [label=expressao_logica]
-	51196112 [label=expressao_simples]
-	51196144 -- 51196112
-	51196112 [label=expressao_simples]
-	51196080 [label=expressao_aditiva]
-	51196112 -- 51196080
-	51196080 [label=expressao_aditiva]
-	51081168 [label=expressao_multiplicativa]
-	51196080 -- 51081168
-	51081168 [label=expressao_multiplicativa]
-	51195952 [label=expressao_unaria]
-	51081168 -- 51195952
-	51195952 [label=expressao_unaria]
-	51196016 [label=fator]
-	51195952 -- 51196016
-	51196016 [label=fator]
-	51079568 [label=numero]
-	51196016 -- 51079568
-	51079568 [label=numero]
+	58071056 [label=programa]
+	58133392 [label=lista_declaracoes]
+	58071056 -- 58133392
+	58133392 [label=lista_declaracoes]
+	58072368 [label=lista_declaracoes]
+	58133392 -- 58072368
+	58072368 [label=lista_declaracoes]
+	57978576 [label=lista_declaracoes]
+	58072368 -- 57978576
+	57978576 [label=lista_declaracoes]
+	57976272 [label=lista_declaracoes]
+	57978576 -- 57976272
+	57976272 [label=lista_declaracoes]
+	57976880 [label=lista_declaracoes]
+	57976272 -- 57976880
+	57976880 [label=lista_declaracoes]
+	57976528 [label=lista_declaracoes]
+	57976880 -- 57976528
+	57976528 [label=lista_declaracoes]
+	57582896 [label=declaracao]
+	57976528 -- 57582896
+	57582896 [label=declaracao]
+	57976624 [label=declaracao_variaveis]
+	57582896 -- 57976624
+	57976624 [label=declaracao_variaveis]
+	56146576 [label=tipo]
+	57976624 -- 56146576
+	1722775208 [label=inteiro]
+	56146576 -- 1722775208
+	56146576 [label=tipo]
+	57976080 [label=lista_variaveis]
+	57976624 -- 57976080
+	57976080 [label=lista_variaveis]
+	57976176 [label=var]
+	57976080 -- 57976176
+	1741196009 [label=vet]
+	57976176 -- 1741196009
+	57976176 [label=var]
+	57976464 [label=indice]
+	57976176 -- 57976464
+	57976464 [label=indice]
+	57976432 [label=expressao]
+	57976464 -- 57976432
+	57976432 [label=expressao]
+	57976400 [label=expressao_logica]
+	57976432 -- 57976400
+	57976400 [label=expressao_logica]
+	57976368 [label=expressao_simples]
+	57976400 -- 57976368
+	57976368 [label=expressao_simples]
+	57976336 [label=expressao_aditiva]
+	57976368 -- 57976336
+	57976336 [label=expressao_aditiva]
+	57976304 [label=expressao_multiplicativa]
+	57976336 -- 57976304
+	57976304 [label=expressao_multiplicativa]
+	57976208 [label=expressao_unaria]
+	57976304 -- 57976208
+	57976208 [label=expressao_unaria]
+	57976240 [label=fator]
+	57976208 -- 57976240
+	57976240 [label=fator]
+	57582864 [label=numero]
+	57976240 -- 57582864
+	176222673618 [label=10]
+	57582864 -- 176222673618
+	57582864 [label=numero]
+	57975984 [label=declaracao]
+	57976880 -- 57975984
+	57975984 [label=declaracao]
+	57976720 [label=declaracao_variaveis]
+	57975984 -- 57976720
+	57976720 [label=declaracao_variaveis]
+	57976144 [label=tipo]
+	57976720 -- 57976144
+	1741075927 [label=inteiro]
+	57976144 -- 1741075927
+	57976144 [label=tipo]
+	57976656 [label=lista_variaveis]
+	57976720 -- 57976656
+	57976656 [label=lista_variaveis]
+	57976592 [label=var]
+	57976656 -- 57976592
+	1741081288 [label=tam]
+	57976592 -- 1741081288
+	57976592 [label=var]
+	57977296 [label=declaracao]
+	57976272 -- 57977296
+	57977296 [label=declaracao]
+	57976816 [label=inicializacao_variaveis]
+	57977296 -- 57976816
+	57976816 [label=inicializacao_variaveis]
+	57976976 [label=atribuicao]
+	57976816 -- 57976976
+	57976976 [label=atribuicao]
+	57976048 [label=var]
+	57976976 -- 57976048
+	1741077607 [label=tam]
+	57976048 -- 1741077607
+	57976048 [label=var]
+	57977200 [label=expressao]
+	57976976 -- 57977200
+	57977200 [label=expressao]
+	57977168 [label=expressao_logica]
+	57977200 -- 57977168
+	57977168 [label=expressao_logica]
+	57977136 [label=expressao_simples]
+	57977168 -- 57977136
+	57977136 [label=expressao_simples]
+	57977072 [label=expressao_aditiva]
+	57977136 -- 57977072
+	57977072 [label=expressao_aditiva]
+	57977040 [label=expressao_multiplicativa]
+	57977072 -- 57977040
+	57977040 [label=expressao_multiplicativa]
+	57977008 [label=expressao_unaria]
+	57977040 -- 57977008
+	57977008 [label=expressao_unaria]
+	57976944 [label=fator]
+	57977008 -- 57976944
+	57976944 [label=fator]
+	57976848 [label=numero]
+	57976944 -- 57976848
+	176264493614 [label=10]
+	57976848 -- 176264493614
+	57976848 [label=numero]
+	57977424 [label=declaracao]
+	57978576 -- 57977424
+	57977424 [label=declaracao]
+	57977104 [label=declaracao_funcao]
+	57977424 -- 57977104
+	57977104 [label=declaracao_funcao]
+	57978480 [label=cabecalho]
+	57977104 -- 57978480
+	1740341365 [label=preencheVetor]
+	57978480 -- 1740341365
+	57978480 [label=cabecalho]
+	57976752 [label=lista_parametros]
+	57978480 -- 57976752
+	57976752 [label=lista_parametros]
+	57976496 [label=vazio]
+	57976752 -- 57976496
+	57976496 [label=vazio]
+	58071760 [label=corpo]
+	57978480 -- 58071760
+	58071760 [label=corpo]
+	57978832 [label=corpo]
+	58071760 -- 57978832
+	57978832 [label=corpo]
+	57978416 [label=corpo]
+	57978832 -- 57978416
+	57978416 [label=corpo]
+	57977968 [label=corpo]
+	57978416 -- 57977968
+	57977968 [label=corpo]
+	57977776 [label=corpo]
+	57977968 -- 57977776
+	57977776 [label=corpo]
+	57977264 [label=corpo]
+	57977776 -- 57977264
+	57977264 [label=corpo]
+	57977552 [label=vazio]
+	57977264 -- 57977552
+	57977552 [label=vazio]
+	57977616 [label=acao]
+	57977776 -- 57977616
+	57977616 [label=acao]
+	57977360 [label=declaracao_variaveis]
+	57977616 -- 57977360
+	57977360 [label=declaracao_variaveis]
+	57977456 [label=tipo]
+	57977360 -- 57977456
+	17414719213 [label=inteiro]
+	57977456 -- 17414719213
+	57977456 [label=tipo]
+	57977392 [label=lista_variaveis]
+	57977360 -- 57977392
+	57977392 [label=lista_variaveis]
+	57977520 [label=var]
+	57977392 -- 57977520
+	16856823214 [label=i]
+	57977520 -- 16856823214
+	57977520 [label=var]
+	57977744 [label=acao]
+	57977968 -- 57977744
+	57977744 [label=acao]
+	57977808 [label=declaracao_variaveis]
+	57977744 -- 57977808
+	57977808 [label=declaracao_variaveis]
+	57977584 [label=tipo]
+	57977808 -- 57977584
+	17414743212 [label=inteiro]
+	57977584 -- 17414743212
+	57977584 [label=tipo]
+	57977872 [label=lista_variaveis]
+	57977808 -- 57977872
+	57977872 [label=lista_variaveis]
+	57977712 [label=var]
+	57977872 -- 57977712
+	17146187213 [label=j]
+	57977712 -- 17146187213
+	57977712 [label=var]
+	57978384 [label=acao]
+	57978416 -- 57978384
+	57978384 [label=acao]
+	57977904 [label=expressao]
+	57978384 -- 57977904
+	57977904 [label=expressao]
+	57978320 [label=atribuicao]
+	57977904 -- 57978320
+	57978320 [label=atribuicao]
+	57977648 [label=var]
+	57978320 -- 57977648
+	16856784012 [label=i]
+	57977648 -- 16856784012
+	57977648 [label=var]
+	57978288 [label=expressao]
+	57978320 -- 57978288
+	57978288 [label=expressao]
+	57978256 [label=expressao_logica]
+	57978288 -- 57978256
+	57978256 [label=expressao_logica]
+	57978224 [label=expressao_simples]
+	57978256 -- 57978224
+	57978224 [label=expressao_simples]
+	57978192 [label=expressao_aditiva]
+	57978224 -- 57978192
+	57978192 [label=expressao_aditiva]
+	57978128 [label=expressao_multiplicativa]
+	57978192 -- 57978128
+	57978128 [label=expressao_multiplicativa]
+	57978000 [label=expressao_unaria]
+	57978128 -- 57978000
+	57978000 [label=expressao_unaria]
+	57978096 [label=fator]
+	57978000 -- 57978096
+	57978096 [label=fator]
+	57977936 [label=numero]
+	57978096 -- 57977936
+	57977936 [label=numero]
+	57978864 [label=acao]
+	57978832 -- 57978864
+	57978864 [label=acao]
+	57978352 [label=expressao]
+	57978864 -- 57978352
+	57978352 [label=expressao]
+	57978800 [label=atribuicao]
+	57978352 -- 57978800
+	57978800 [label=atribuicao]
+	57977840 [label=var]
+	57978800 -- 57977840
+	17146192011 [label=j]
+	57977840 -- 17146192011
+	57977840 [label=var]
+	57978768 [label=expressao]
+	57978800 -- 57978768
+	57978768 [label=expressao]
+	57978736 [label=expressao_logica]
+	57978768 -- 57978736
+	57978736 [label=expressao_logica]
+	57978704 [label=expressao_simples]
+	57978736 -- 57978704
+	57978704 [label=expressao_simples]
+	57978672 [label=expressao_aditiva]
+	57978704 -- 57978672
+	57978672 [label=expressao_aditiva]
+	57978640 [label=expressao_multiplicativa]
+	57978672 -- 57978640
+	57978640 [label=expressao_multiplicativa]
+	57978032 [label=expressao_unaria]
+	57978640 -- 57978032
+	57978032 [label=expressao_unaria]
+	57978512 [label=fator]
+	57978032 -- 57978512
+	57978512 [label=fator]
+	57978160 [label=var]
+	57978512 -- 57978160
+	17414943218 [label=tam]
+	57978160 -- 17414943218
+	57978160 [label=var]
+	57978608 [label=acao]
+	58071760 -- 57978608
+	57978608 [label=acao]
+	58071824 [label=repita]
+	57978608 -- 58071824
+	58071824 [label=repita]
+	58071248 [label=corpo]
+	58071824 -- 58071248
+	58071248 [label=corpo]
+	58070640 [label=corpo]
+	58071248 -- 58070640
+	58070640 [label=corpo]
+	58069680 [label=corpo]
+	58070640 -- 58069680
+	58069680 [label=corpo]
+	57978448 [label=corpo]
+	58069680 -- 57978448
+	57978448 [label=corpo]
+	57978064 [label=vazio]
+	57978448 -- 57978064
+	57978064 [label=vazio]
+	58069968 [label=acao]
+	58069680 -- 58069968
+	58069968 [label=acao]
+	58069936 [label=expressao]
+	58069968 -- 58069936
+	58069936 [label=expressao]
+	58069648 [label=expressao_logica]
+	58069936 -- 58069648
+	58069648 [label=expressao_logica]
+	58069872 [label=expressao_simples]
+	58069648 -- 58069872
+	58069872 [label=expressao_simples]
+	58069264 [label=expressao_simples]
+	58069872 -- 58069264
+	58069264 [label=expressao_simples]
+	58069520 [label=expressao_aditiva]
+	58069264 -- 58069520
+	58069520 [label=expressao_aditiva]
+	58069488 [label=expressao_multiplicativa]
+	58069520 -- 58069488
+	58069488 [label=expressao_multiplicativa]
+	58069584 [label=expressao_unaria]
+	58069488 -- 58069584
+	58069584 [label=expressao_unaria]
+	58069104 [label=fator]
+	58069584 -- 58069104
+	58069104 [label=fator]
+	58069200 [label=var]
+	58069104 -- 58069200
+	17433108021 [label=vet]
+	58069200 -- 17433108021
+	58069200 [label=var]
+	58069456 [label=indice]
+	58069200 -- 58069456
+	58069456 [label=indice]
+	58069424 [label=expressao]
+	58069456 -- 58069424
+	58069424 [label=expressao]
+	58069392 [label=expressao_logica]
+	58069424 -- 58069392
+	58069392 [label=expressao_logica]
+	58069360 [label=expressao_simples]
+	58069392 -- 58069360
+	58069360 [label=expressao_simples]
+	58069328 [label=expressao_aditiva]
+	58069360 -- 58069328
+	58069328 [label=expressao_aditiva]
+	58069296 [label=expressao_multiplicativa]
+	58069328 -- 58069296
+	58069296 [label=expressao_multiplicativa]
+	58069168 [label=expressao_unaria]
+	58069296 -- 58069168
+	58069168 [label=expressao_unaria]
+	58069232 [label=fator]
+	58069168 -- 58069232
+	58069232 [label=fator]
+	58069040 [label=var]
+	58069232 -- 58069040
+	16866099230 [label=i]
+	58069040 -- 16866099230
+	58069040 [label=var]
+	58069616 [label=operador_relacional]
+	58069872 -- 58069616
+	16886397616 [label="="]
+	58069616 -- 16886397616
+	58069616 [label=operador_relacional]
+	58069840 [label=expressao_aditiva]
+	58069872 -- 58069840
+	58069840 [label=expressao_aditiva]
+	58069776 [label=expressao_multiplicativa]
+	58069840 -- 58069776
+	58069776 [label=expressao_multiplicativa]
+	58069744 [label=expressao_unaria]
+	58069776 -- 58069744
+	58069744 [label=expressao_unaria]
+	58069712 [label=fator]
+	58069744 -- 58069712
+	58069712 [label=fator]
+	58069552 [label=var]
+	58069712 -- 58069552
+	17155455220 [label=j]
+	58069552 -- 17155455220
+	58069552 [label=var]
+	58070608 [label=acao]
+	58070640 -- 58070608
+	58070608 [label=acao]
+	58070032 [label=expressao]
+	58070608 -- 58070032
+	58070032 [label=expressao]
+	58070320 [label=atribuicao]
+	58070032 -- 58070320
+	58070320 [label=atribuicao]
+	58069136 [label=var]
+	58070320 -- 58069136
+	16865960814 [label=i]
+	58069136 -- 16865960814
+	58069136 [label=var]
+	58070576 [label=expressao]
+	58070320 -- 58070576
+	58070576 [label=expressao]
+	58070544 [label=expressao_logica]
+	58070576 -- 58070544
+	58070544 [label=expressao_logica]
+	58070288 [label=expressao_simples]
+	58070544 -- 58070288
+	58070288 [label=expressao_simples]
+	58070480 [label=expressao_aditiva]
+	58070288 -- 58070480
+	58070480 [label=expressao_aditiva]
+	58070224 [label=expressao_aditiva]
+	58070480 -- 58070224
+	58070224 [label=expressao_aditiva]
+	58070192 [label=expressao_multiplicativa]
+	58070224 -- 58070192
+	58070192 [label=expressao_multiplicativa]
+	58069904 [label=expressao_unaria]
+	58070192 -- 58069904
+	58069904 [label=expressao_unaria]
+	58070128 [label=fator]
+	58069904 -- 58070128
+	58070128 [label=fator]
+	58069808 [label=var]
+	58070128 -- 58069808
+	16866116022 [label=i]
+	58069808 -- 16866116022
+	58069808 [label=var]
+	58070256 [label=operador_soma]
+	58070480 -- 58070256
+	17167695218 [label="+"]
+	58070256 -- 17167695218
+	58070256 [label=operador_soma]
+	58070416 [label=expressao_multiplicativa]
+	58070480 -- 58070416
+	58070416 [label=expressao_multiplicativa]
+	58070384 [label=expressao_unaria]
+	58070416 -- 58070384
+	58070384 [label=expressao_unaria]
+	58070352 [label=fator]
+	58070384 -- 58070352
+	58070352 [label=fator]
+	58070160 [label=numero]
+	58070352 -- 58070160
+	176273886421 [label=1]
+	58070160 -- 176273886421
+	58070160 [label=numero]
+	58071216 [label=acao]
+	58071248 -- 58071216
+	58071216 [label=acao]
+	58070512 [label=expressao]
+	58071216 -- 58070512
+	58070512 [label=expressao]
+	58070928 [label=atribuicao]
+	58070512 -- 58070928
+	58070928 [label=atribuicao]
+	58070000 [label=var]
+	58070928 -- 58070000
+	17155440013 [label=j]
+	58070000 -- 17155440013
+	58070000 [label=var]
+	58071184 [label=expressao]
+	58070928 -- 58071184
+	58071184 [label=expressao]
+	58071152 [label=expressao_logica]
+	58071184 -- 58071152
+	58071152 [label=expressao_logica]
+	58070896 [label=expressao_simples]
+	58071152 -- 58070896
+	58070896 [label=expressao_simples]
+	58071088 [label=expressao_aditiva]
+	58070896 -- 58071088
+	58071088 [label=expressao_aditiva]
+	58070832 [label=expressao_aditiva]
+	58071088 -- 58070832
+	58070832 [label=expressao_aditiva]
+	58070800 [label=expressao_multiplicativa]
+	58070832 -- 58070800
+	58070800 [label=expressao_multiplicativa]
+	58070064 [label=expressao_unaria]
+	58070800 -- 58070064
+	58070064 [label=expressao_unaria]
+	58070736 [label=fator]
+	58070064 -- 58070736
+	58070736 [label=fator]
+	58070448 [label=var]
+	58070736 -- 58070448
+	17155552821 [label=j]
+	58070448 -- 17155552821
+	58070448 [label=var]
+	58070864 [label=operador_soma]
+	58071088 -- 58070864
+	16866196017 [label="-"]
+	58070864 -- 16866196017
+	58070864 [label=operador_soma]
+	58071024 [label=expressao_multiplicativa]
+	58071088 -- 58071024
+	58071024 [label=expressao_multiplicativa]
+	58070992 [label=expressao_unaria]
+	58071024 -- 58070992
+	58070992 [label=expressao_unaria]
+	58070960 [label=fator]
+	58070992 -- 58070960
+	58070960 [label=fator]
+	58070768 [label=numero]
+	58070960 -- 58070768
+	176273947220 [label=1]
+	58070768 -- 176273947220
+	58070768 [label=numero]
+	58071792 [label=expressao]
+	58071824 -- 58071792
+	58071792 [label=expressao]
+	58071440 [label=expressao_logica]
+	58071792 -- 58071440
+	58071440 [label=expressao_logica]
+	58071728 [label=expressao_simples]
+	58071440 -- 58071728
+	58071728 [label=expressao_simples]
+	58071376 [label=expressao_simples]
+	58071728 -- 58071376
+	58071376 [label=expressao_simples]
+	58071344 [label=expressao_aditiva]
+	58071376 -- 58071344
+	58071344 [label=expressao_aditiva]
+	58070672 [label=expressao_multiplicativa]
+	58071344 -- 58070672
+	58070672 [label=expressao_multiplicativa]
+	58071120 [label=expressao_unaria]
+	58070672 -- 58071120
+	58071120 [label=expressao_unaria]
+	58071280 [label=fator]
+	58071120 -- 58071280
+	58071280 [label=fator]
+	58070096 [label=var]
+	58071280 -- 58070096
+	16866068817 [label=i]
+	58070096 -- 16866068817
+	58070096 [label=var]
+	58071408 [label=operador_relacional]
+	58071728 -- 58071408
+	17186840012 [label="<"]
+	58071408 -- 17186840012
+	58071408 [label=operador_relacional]
+	58071696 [label=expressao_aditiva]
+	58071728 -- 58071696
+	58071696 [label=expressao_aditiva]
+	58071664 [label=expressao_multiplicativa]
+	58071696 -- 58071664
+	58071664 [label=expressao_multiplicativa]
+	58071568 [label=expressao_unaria]
+	58071664 -- 58071568
+	58071568 [label=expressao_unaria]
+	58071504 [label=fator]
+	58071568 -- 58071504
+	58071504 [label=fator]
+	58071312 [label=var]
+	58071504 -- 58071312
+	17433549616 [label=tam]
+	58071312 -- 17433549616
+	58071312 [label=var]
+	58071472 [label=declaracao]
+	58072368 -- 58071472
+	58071472 [label=declaracao]
+	58071888 [label=declaracao_funcao]
+	58071472 -- 58071888
+	58071888 [label=declaracao_funcao]
+	58072304 [label=cabecalho]
+	58071888 -- 58072304
+	1743319204 [label=bubble_sort]
+	58072304 -- 1743319204
+	58072304 [label=cabecalho]
+	57977232 [label=lista_parametros]
+	58072304 -- 57977232
+	57977232 [label=lista_parametros]
+	57976912 [label=vazio]
+	57977232 -- 57976912
+	57976912 [label=vazio]
+	58133232 [label=corpo]
+	58072304 -- 58133232
+	58133232 [label=corpo]
+	58072688 [label=corpo]
+	58133232 -- 58072688
+	58072688 [label=corpo]
+	58072208 [label=corpo]
+	58072688 -- 58072208
+	58072208 [label=corpo]
+	58071856 [label=corpo]
+	58072208 -- 58071856
+	58071856 [label=corpo]
+	58072016 [label=vazio]
+	58071856 -- 58072016
+	58072016 [label=vazio]
+	58072080 [label=acao]
+	58072208 -- 58072080
+	58072080 [label=acao]
+	58071632 [label=declaracao_variaveis]
+	58072080 -- 58071632
+	58071632 [label=declaracao_variaveis]
+	58071920 [label=tipo]
+	58071632 -- 58071920
+	17436451210 [label=inteiro]
+	58071920 -- 17436451210
+	58071920 [label=tipo]
+	58071600 [label=lista_variaveis]
+	58071632 -- 58071600
+	58071600 [label=lista_variaveis]
+	58071984 [label=var]
+	58071600 -- 58071984
+	16869100811 [label=i]
+	58071984 -- 16869100811
+	58071984 [label=var]
+	58072656 [label=acao]
+	58072688 -- 58072656
+	58072656 [label=acao]
+	58072144 [label=expressao]
+	58072656 -- 58072144
+	58072144 [label=expressao]
+	58072592 [label=atribuicao]
+	58072144 -- 58072592
+	58072592 [label=atribuicao]
+	58072048 [label=var]
+	58072592 -- 58072048
+	16869111210 [label=i]
+	58072048 -- 16869111210
+	58072048 [label=var]
+	58072560 [label=expressao]
+	58072592 -- 58072560
+	58072560 [label=expressao]
+	58072528 [label=expressao_logica]
+	58072560 -- 58072528
+	58072528 [label=expressao_logica]
+	58072496 [label=expressao_simples]
+	58072528 -- 58072496
+	58072496 [label=expressao_simples]
+	58072464 [label=expressao_aditiva]
+	58072496 -- 58072464
+	58072464 [label=expressao_aditiva]
+	58072432 [label=expressao_multiplicativa]
+	58072464 -- 58072432
+	58072432 [label=expressao_multiplicativa]
+	58072240 [label=expressao_unaria]
+	58072432 -- 58072240
+	58072240 [label=expressao_unaria]
+	58072336 [label=fator]
+	58072240 -- 58072336
+	58072336 [label=fator]
+	58072176 [label=numero]
+	58072336 -- 58072176
+	58072176 [label=numero]
+	58072400 [label=acao]
+	58133232 -- 58072400
+	58072400 [label=acao]
+	58133296 [label=repita]
+	58072400 -- 58133296
+	58133296 [label=repita]
+	58132720 [label=corpo]
+	58133296 -- 58132720
+	58132720 [label=corpo]
+	58132080 [label=corpo]
+	58132720 -- 58132080
+	58132080 [label=corpo]
+	58118576 [label=corpo]
+	58132080 -- 58118576
+	58118576 [label=corpo]
+	58073008 [label=corpo]
+	58118576 -- 58073008
+	58073008 [label=corpo]
+	58072272 [label=corpo]
+	58073008 -- 58072272
+	58072272 [label=corpo]
+	58072112 [label=vazio]
+	58072272 -- 58072112
+	58072112 [label=vazio]
+	58072816 [label=acao]
+	58073008 -- 58072816
+	58072816 [label=acao]
+	58072880 [label=declaracao_variaveis]
+	58072816 -- 58072880
+	58072880 [label=declaracao_variaveis]
+	58072624 [label=tipo]
+	58072880 -- 58072624
+	17436626414 [label=inteiro]
+	58072624 -- 17436626414
+	58072624 [label=tipo]
+	58072912 [label=lista_variaveis]
+	58072880 -- 58072912
+	58072912 [label=lista_variaveis]
+	58072752 [label=var]
+	58072912 -- 58072752
+	17158578415 [label=j]
+	58072752 -- 17158578415
+	58072752 [label=var]
+	58118544 [label=acao]
+	58118576 -- 58118544
+	58118544 [label=acao]
+	58072944 [label=expressao]
+	58118544 -- 58072944
+	58072944 [label=expressao]
+	58118480 [label=atribuicao]
+	58072944 -- 58118480
+	58118480 [label=atribuicao]
+	58072784 [label=var]
+	58118480 -- 58072784
+	17158593614 [label=j]
+	58072784 -- 17158593614
+	58072784 [label=var]
+	58118448 [label=expressao]
+	58118480 -- 58118448
+	58118448 [label=expressao]
+	58118416 [label=expressao_logica]
+	58118448 -- 58118416
+	58118416 [label=expressao_logica]
+	58118384 [label=expressao_simples]
+	58118416 -- 58118384
+	58118384 [label=expressao_simples]
+	58118352 [label=expressao_aditiva]
+	58118384 -- 58118352
+	58118352 [label=expressao_aditiva]
+	58118320 [label=expressao_multiplicativa]
+	58118352 -- 58118320
+	58118320 [label=expressao_multiplicativa]
+	58073040 [label=expressao_unaria]
+	58118320 -- 58073040
+	58073040 [label=expressao_unaria]
+	58118224 [label=fator]
+	58073040 -- 58118224
+	58118224 [label=fator]
+	58072976 [label=numero]
+	58118224 -- 58072976
+	58072976 [label=numero]
+	58118288 [label=acao]
+	58132080 -- 58118288
+	58118288 [label=acao]
+	58132144 [label=repita]
+	58118288 -- 58132144
+	58132144 [label=repita]
+	58131632 [label=corpo]
+	58132144 -- 58131632
+	58131632 [label=corpo]
+	58119280 [label=corpo]
+	58131632 -- 58119280
+	58119280 [label=corpo]
+	58073072 [label=corpo]
+	58119280 -- 58073072
+	58073072 [label=corpo]
+	58072848 [label=vazio]
+	58073072 -- 58072848
+	58072848 [label=vazio]
+	58118640 [label=acao]
+	58119280 -- 58118640
+	58118640 [label=acao]
+	58121456 [label=se]
+	58118640 -- 58121456
+	58121456 [label=se]
+	58119824 [label=expressao]
+	58121456 -- 58119824
+	58119824 [label=expressao]
+	58119248 [label=expressao_logica]
+	58119824 -- 58119248
+	58119248 [label=expressao_logica]
+	58119440 [label=expressao_simples]
+	58119248 -- 58119440
+	58119440 [label=expressao_simples]
+	58118864 [label=expressao_simples]
+	58119440 -- 58118864
+	58118864 [label=expressao_simples]
+	58119120 [label=expressao_aditiva]
+	58118864 -- 58119120
+	58119120 [label=expressao_aditiva]
+	58119088 [label=expressao_multiplicativa]
+	58119120 -- 58119088
+	58119088 [label=expressao_multiplicativa]
+	58119184 [label=expressao_unaria]
+	58119088 -- 58119184
+	58119184 [label=expressao_unaria]
+	58118736 [label=fator]
+	58119184 -- 58118736
+	58118736 [label=fator]
+	58118800 [label=var]
+	58118736 -- 58118800
+	17445944824 [label=vet]
+	58118800 -- 17445944824
+	58118800 [label=var]
+	58119056 [label=indice]
+	58118800 -- 58119056
+	58119056 [label=indice]
+	58119024 [label=expressao]
+	58119056 -- 58119024
+	58119024 [label=expressao]
+	58118992 [label=expressao_logica]
+	58119024 -- 58118992
+	58118992 [label=expressao_logica]
+	58118960 [label=expressao_simples]
+	58118992 -- 58118960
+	58118960 [label=expressao_simples]
+	58118928 [label=expressao_aditiva]
+	58118960 -- 58118928
+	58118928 [label=expressao_aditiva]
+	58118896 [label=expressao_multiplicativa]
+	58118928 -- 58118896
+	58118896 [label=expressao_multiplicativa]
+	58118704 [label=expressao_unaria]
+	58118896 -- 58118704
+	58118704 [label=expressao_unaria]
+	58118832 [label=fator]
+	58118704 -- 58118832
+	58118832 [label=fator]
+	58118512 [label=var]
+	58118832 -- 58118512
+	16873937633 [label=i]
+	58118512 -- 16873937633
+	58118512 [label=var]
+	58119216 [label=operador_relacional]
+	58119440 -- 58119216
+	17194547219 [label=">"]
+	58119216 -- 17194547219
+	58119216 [label=operador_relacional]
+	58119696 [label=expressao_aditiva]
+	58119440 -- 58119696
+	58119696 [label=expressao_aditiva]
+	58119664 [label=expressao_multiplicativa]
+	58119696 -- 58119664
+	58119664 [label=expressao_multiplicativa]
+	58119760 [label=expressao_unaria]
+	58119664 -- 58119760
+	58119760 [label=expressao_unaria]
+	58119312 [label=fator]
+	58119760 -- 58119312
+	58119312 [label=fator]
+	58119376 [label=var]
+	58119312 -- 58119376
+	16883575223 [label=v]
+	58119376 -- 16883575223
+	58119376 [label=var]
+	58119632 [label=indice]
+	58119376 -- 58119632
+	58119632 [label=indice]
+	58119600 [label=expressao]
+	58119632 -- 58119600
+	58119600 [label=expressao]
+	58119568 [label=expressao_logica]
+	58119600 -- 58119568
+	58119568 [label=expressao_logica]
+	58119536 [label=expressao_simples]
+	58119568 -- 58119536
+	58119536 [label=expressao_simples]
+	58119504 [label=expressao_aditiva]
+	58119536 -- 58119504
+	58119504 [label=expressao_aditiva]
+	58119472 [label=expressao_multiplicativa]
+	58119504 -- 58119472
+	58119472 [label=expressao_multiplicativa]
+	58119344 [label=expressao_unaria]
+	58119472 -- 58119344
+	58119344 [label=expressao_unaria]
+	58119408 [label=fator]
+	58119344 -- 58119408
+	58119408 [label=fator]
+	58119152 [label=var]
+	58119408 -- 58119152
+	17163382432 [label=j]
+	58119152 -- 17163382432
+	58119152 [label=var]
+	58131120 [label=corpo]
+	58121456 -- 58131120
+	58131120 [label=corpo]
+	58122128 [label=corpo]
+	58131120 -- 58122128
+	58122128 [label=corpo]
+	58121072 [label=corpo]
+	58122128 -- 58121072
+	58121072 [label=corpo]
+	58120272 [label=corpo]
+	58121072 -- 58120272
+	58120272 [label=corpo]
+	58119856 [label=corpo]
+	58120272 -- 58119856
+	58119856 [label=corpo]
+	58119952 [label=vazio]
+	58119856 -- 58119952
+	58119952 [label=vazio]
+	58120016 [label=acao]
+	58120272 -- 58120016
+	58120016 [label=acao]
+	58120080 [label=declaracao_variaveis]
+	58120016 -- 58120080
+	58120080 [label=declaracao_variaveis]
+	58119792 [label=tipo]
+	58120080 -- 58119792
+	17446128022 [label=inteiro]
+	58119792 -- 17446128022
+	58119792 [label=tipo]
+	58120112 [label=lista_variaveis]
+	58120080 -- 58120112
+	58120112 [label=lista_variaveis]
+	58119920 [label=var]
+	58120112 -- 58119920
+	17446174423 [label=temp]
+	58119920 -- 17446174423
+	58119920 [label=var]
+	58121040 [label=acao]
+	58121072 -- 58121040
+	58121040 [label=acao]
+	58120240 [label=expressao]
+	58121040 -- 58120240
+	58120240 [label=expressao]
+	58120976 [label=atribuicao]
+	58120240 -- 58120976
+	58120976 [label=atribuicao]
+	58119984 [label=var]
+	58120976 -- 58119984
+	17446204022 [label=temp]
+	58119984 -- 17446204022
+	58119984 [label=var]
+	58120944 [label=expressao]
+	58120976 -- 58120944
+	58120944 [label=expressao]
+	58120912 [label=expressao_logica]
+	58120944 -- 58120912
+	58120912 [label=expressao_logica]
+	58120528 [label=expressao_simples]
+	58120912 -- 58120528
+	58120528 [label=expressao_simples]
+	58120784 [label=expressao_aditiva]
+	58120528 -- 58120784
+	58120784 [label=expressao_aditiva]
+	58120752 [label=expressao_multiplicativa]
+	58120784 -- 58120752
+	58120752 [label=expressao_multiplicativa]
+	58120880 [label=expressao_unaria]
+	58120752 -- 58120880
+	58120880 [label=expressao_unaria]
+	58120400 [label=fator]
+	58120880 -- 58120400
+	58120400 [label=fator]
+	58120464 [label=var]
+	58120400 -- 58120464
+	17446329629 [label=vet]
+	58120464 -- 17446329629
+	58120464 [label=var]
+	58120720 [label=indice]
+	58120464 -- 58120720
+	58120720 [label=indice]
+	58120688 [label=expressao]
+	58120720 -- 58120688
+	58120688 [label=expressao]
+	58120656 [label=expressao_logica]
+	58120688 -- 58120656
+	58120656 [label=expressao_logica]
+	58120624 [label=expressao_simples]
+	58120656 -- 58120624
+	58120624 [label=expressao_simples]
+	58120592 [label=expressao_aditiva]
+	58120624 -- 58120592
+	58120592 [label=expressao_aditiva]
+	58120560 [label=expressao_multiplicativa]
+	58120592 -- 58120560
+	58120560 [label=expressao_multiplicativa]
+	58120304 [label=expressao_unaria]
+	58120560 -- 58120304
+	58120304 [label=expressao_unaria]
+	58120496 [label=fator]
+	58120304 -- 58120496
+	58120496 [label=fator]
+	58120208 [label=var]
+	58120496 -- 58120208
+	16874151238 [label=i]
+	58120208 -- 16874151238
+	58120208 [label=var]
+	58122096 [label=acao]
+	58122128 -- 58122096
+	58122096 [label=acao]
+	58121488 [label=expressao]
+	58122096 -- 58121488
+	58121488 [label=expressao]
+	58122032 [label=atribuicao]
+	58121488 -- 58122032
+	58122032 [label=atribuicao]
+	58121104 [label=var]
+	58122032 -- 58121104
+	17446368021 [label=vet]
+	58121104 -- 17446368021
+	58121104 [label=var]
+	58121328 [label=indice]
+	58121104 -- 58121328
+	58121328 [label=indice]
+	58121296 [label=expressao]
+	58121328 -- 58121296
+	58121296 [label=expressao]
+	58121264 [label=expressao_logica]
+	58121296 -- 58121264
+	58121264 [label=expressao_logica]
+	58121232 [label=expressao_simples]
+	58121264 -- 58121232
+	58121232 [label=expressao_simples]
+	58121200 [label=expressao_aditiva]
+	58121232 -- 58121200
+	58121200 [label=expressao_aditiva]
+	58120336 [label=expressao_multiplicativa]
+	58121200 -- 58120336
+	58120336 [label=expressao_multiplicativa]
+	58121008 [label=expressao_unaria]
+	58120336 -- 58121008
+	58121008 [label=expressao_unaria]
+	58121136 [label=fator]
+	58121008 -- 58121136
+	58121136 [label=fator]
+	58120048 [label=var]
+	58121136 -- 58120048
+	16874083230 [label=i]
+	58120048 -- 16874083230
+	58120048 [label=var]
+	58122000 [label=expressao]
+	58122032 -- 58122000
+	58122000 [label=expressao]
+	58121968 [label=expressao_logica]
+	58122000 -- 58121968
+	58121968 [label=expressao_logica]
+	58121616 [label=expressao_simples]
+	58121968 -- 58121616
+	58121616 [label=expressao_simples]
+	58121840 [label=expressao_aditiva]
+	58121616 -- 58121840
+	58121840 [label=expressao_aditiva]
+	58121808 [label=expressao_multiplicativa]
+	58121840 -- 58121808
+	58121808 [label=expressao_multiplicativa]
+	58121936 [label=expressao_unaria]
+	58121808 -- 58121936
+	58121936 [label=expressao_unaria]
+	58121168 [label=fator]
+	58121936 -- 58121168
+	58121168 [label=fator]
+	58121552 [label=var]
+	58121168 -- 58121552
+	17446539228 [label=vet]
+	58121552 -- 17446539228
+	58121552 [label=var]
+	58121776 [label=indice]
+	58121552 -- 58121776
+	58121776 [label=indice]
+	58121744 [label=expressao]
+	58121776 -- 58121744
+	58121744 [label=expressao]
+	58121712 [label=expressao_logica]
+	58121744 -- 58121712
+	58121712 [label=expressao_logica]
+	58121680 [label=expressao_simples]
+	58121712 -- 58121680
+	58121680 [label=expressao_simples]
+	58121648 [label=expressao_aditiva]
+	58121680 -- 58121648
+	58121648 [label=expressao_aditiva]
+	58121392 [label=expressao_multiplicativa]
+	58121648 -- 58121392
+	58121392 [label=expressao_multiplicativa]
+	58121360 [label=expressao_unaria]
+	58121392 -- 58121360
+	58121360 [label=expressao_unaria]
+	58121584 [label=fator]
+	58121360 -- 58121584
+	58121584 [label=fator]
+	58120848 [label=var]
+	58121584 -- 58120848
+	17163576037 [label=j]
+	58120848 -- 17163576037
+	58120848 [label=var]
+	58131088 [label=acao]
+	58131120 -- 58131088
+	58131088 [label=acao]
+	58130768 [label=expressao]
+	58131088 -- 58130768
+	58130768 [label=expressao]
+	58131024 [label=atribuicao]
+	58130768 -- 58131024
+	58131024 [label=atribuicao]
+	58122160 [label=var]
+	58131024 -- 58122160
+	17446535220 [label=vet]
+	58122160 -- 17446535220
+	58122160 [label=var]
+	58130608 [label=indice]
+	58122160 -- 58130608
+	58130608 [label=indice]
+	58130576 [label=expressao]
+	58130608 -- 58130576
+	58130576 [label=expressao]
+	58130544 [label=expressao_logica]
+	58130576 -- 58130544
+	58130544 [label=expressao_logica]
+	58130512 [label=expressao_simples]
+	58130544 -- 58130512
+	58130512 [label=expressao_simples]
+	58130480 [label=expressao_aditiva]
+	58130512 -- 58130480
+	58130480 [label=expressao_aditiva]
+	58121424 [label=expressao_multiplicativa]
+	58130480 -- 58121424
+	58121424 [label=expressao_multiplicativa]
+	58122064 [label=expressao_unaria]
+	58121424 -- 58122064
+	58122064 [label=expressao_unaria]
+	58122192 [label=fator]
+	58122064 -- 58122192
+	58122192 [label=fator]
+	58120368 [label=var]
+	58122192 -- 58120368
+	17163468029 [label=j]
+	58120368 -- 17163468029
+	58120368 [label=var]
+	58130992 [label=expressao]
+	58131024 -- 58130992
+	58130992 [label=expressao]
+	58130960 [label=expressao_logica]
+	58130992 -- 58130960
+	58130960 [label=expressao_logica]
+	58130928 [label=expressao_simples]
+	58130960 -- 58130928
+	58130928 [label=expressao_simples]
+	58130896 [label=expressao_aditiva]
+	58130928 -- 58130896
+	58130896 [label=expressao_aditiva]
+	58130672 [label=expressao_multiplicativa]
+	58130896 -- 58130672
+	58130672 [label=expressao_multiplicativa]
+	58122224 [label=expressao_unaria]
+	58130672 -- 58122224
+	58122224 [label=expressao_unaria]
+	58130640 [label=fator]
+	58122224 -- 58130640
+	58130640 [label=fator]
+	58121904 [label=var]
+	58130640 -- 58121904
+	17447494427 [label=temp]
+	58121904 -- 17447494427
+	58121904 [label=var]
+	58131600 [label=acao]
+	58131632 -- 58131600
+	58131600 [label=acao]
+	58119728 [label=expressao]
+	58131600 -- 58119728
+	58119728 [label=expressao]
+	58131312 [label=atribuicao]
+	58119728 -- 58131312
+	58131312 [label=atribuicao]
+	58118672 [label=var]
+	58131312 -- 58118672
+	17163202416 [label=j]
+	58118672 -- 17163202416
+	58118672 [label=var]
+	58131568 [label=expressao]
+	58131312 -- 58131568
+	58131568 [label=expressao]
+	58131536 [label=expressao_logica]
+	58131568 -- 58131536
+	58131536 [label=expressao_logica]
+	58131280 [label=expressao_simples]
+	58131536 -- 58131280
+	58131280 [label=expressao_simples]
+	58131472 [label=expressao_aditiva]
+	58131280 -- 58131472
+	58131472 [label=expressao_aditiva]
+	58131216 [label=expressao_aditiva]
+	58131472 -- 58131216
+	58131216 [label=expressao_aditiva]
+	58131152 [label=expressao_multiplicativa]
+	58131216 -- 58131152
+	58131152 [label=expressao_multiplicativa]
+	58130704 [label=expressao_unaria]
+	58131152 -- 58130704
+	58130704 [label=expressao_unaria]
+	58130864 [label=fator]
+	58130704 -- 58130864
+	58130864 [label=fator]
+	58131184 [label=var]
+	58130864 -- 58131184
+	17164473624 [label=j]
+	58131184 -- 17164473624
+	58131184 [label=var]
+	58131248 [label=operador_soma]
+	58131472 -- 58131248
+	17176709620 [label="+"]
+	58131248 -- 17176709620
+	58131248 [label=operador_soma]
+	58131408 [label=expressao_multiplicativa]
+	58131472 -- 58131408
+	58131408 [label=expressao_multiplicativa]
+	58131376 [label=expressao_unaria]
+	58131408 -- 58131376
+	58131376 [label=expressao_unaria]
+	58131344 [label=fator]
+	58131376 -- 58131344
+	58131344 [label=fator]
+	58130832 [label=numero]
+	58131344 -- 58130832
+	176282844823 [label=1]
+	58130832 -- 176282844823
+	58130832 [label=numero]
+	58132112 [label=expressao]
+	58132144 -- 58132112
+	58132112 [label=expressao]
+	58131824 [label=expressao_logica]
+	58132112 -- 58131824
+	58131824 [label=expressao_logica]
+	58132048 [label=expressao_simples]
+	58131824 -- 58132048
+	58132048 [label=expressao_simples]
+	58131760 [label=expressao_simples]
+	58132048 -- 58131760
+	58131760 [label=expressao_simples]
+	58131728 [label=expressao_aditiva]
+	58131760 -- 58131728
+	58131728 [label=expressao_aditiva]
+	58131056 [label=expressao_multiplicativa]
+	58131728 -- 58131056
+	58131056 [label=expressao_multiplicativa]
+	58131504 [label=expressao_unaria]
+	58131056 -- 58131504
+	58131504 [label=expressao_unaria]
+	58131664 [label=fator]
+	58131504 -- 58131664
+	58131664 [label=fator]
+	58118608 [label=var]
+	58131664 -- 58118608
+	17163188020 [label=j]
+	58118608 -- 17163188020
+	58118608 [label=var]
+	58131792 [label=operador_relacional]
+	58132048 -- 58131792
+	17195765615 [label="<"]
+	58131792 -- 17195765615
+	58131792 [label=operador_relacional]
+	58132016 [label=expressao_aditiva]
+	58132048 -- 58132016
+	58132016 [label=expressao_aditiva]
+	58131952 [label=expressao_multiplicativa]
+	58132016 -- 58131952
+	58131952 [label=expressao_multiplicativa]
+	58131920 [label=expressao_unaria]
+	58131952 -- 58131920
+	58131920 [label=expressao_unaria]
+	58131888 [label=fator]
+	58131920 -- 58131888
+	58131888 [label=fator]
+	58131696 [label=var]
+	58131888 -- 58131696
+	16875180019 [label=i]
+	58131696 -- 16875180019
+	58131696 [label=var]
+	58132688 [label=acao]
+	58132720 -- 58132688
+	58132688 [label=acao]
+	58130736 [label=expressao]
+	58132688 -- 58130736
+	58130736 [label=expressao]
+	58132400 [label=atribuicao]
+	58130736 -- 58132400
+	58132400 [label=atribuicao]
+	58118192 [label=var]
+	58132400 -- 58118192
+	16873713612 [label=i]
+	58118192 -- 16873713612
+	58118192 [label=var]
+	58132656 [label=expressao]
+	58132400 -- 58132656
+	58132656 [label=expressao]
+	58132624 [label=expressao_logica]
+	58132656 -- 58132624
+	58132624 [label=expressao_logica]
+	58132368 [label=expressao_simples]
+	58132624 -- 58132368
+	58132368 [label=expressao_simples]
+	58132560 [label=expressao_aditiva]
+	58132368 -- 58132560
+	58132560 [label=expressao_aditiva]
+	58132304 [label=expressao_aditiva]
+	58132560 -- 58132304
+	58132304 [label=expressao_aditiva]
+	58132272 [label=expressao_multiplicativa]
+	58132304 -- 58132272
+	58132272 [label=expressao_multiplicativa]
+	58132176 [label=expressao_unaria]
+	58132272 -- 58132176
+	58132176 [label=expressao_unaria]
+	58132208 [label=fator]
+	58132176 -- 58132208
+	58132208 [label=fator]
+	58131984 [label=var]
+	58132208 -- 58131984
+	16875184820 [label=i]
+	58131984 -- 16875184820
+	58131984 [label=var]
+	58132336 [label=operador_soma]
+	58132560 -- 58132336
+	17176750416 [label="+"]
+	58132336 -- 17176750416
+	58132336 [label=operador_soma]
+	58132496 [label=expressao_multiplicativa]
+	58132560 -- 58132496
+	58132496 [label=expressao_multiplicativa]
+	58132464 [label=expressao_unaria]
+	58132496 -- 58132464
+	58132464 [label=expressao_unaria]
+	58132432 [label=fator]
+	58132464 -- 58132432
+	58132432 [label=fator]
+	58132240 [label=numero]
+	58132432 -- 58132240
+	176282925619 [label=1]
+	58132240 -- 176282925619
+	58132240 [label=numero]
+	58133264 [label=expressao]
+	58133296 -- 58133264
+	58133264 [label=expressao]
+	58132912 [label=expressao_logica]
+	58133264 -- 58132912
+	58132912 [label=expressao_logica]
+	58133200 [label=expressao_simples]
+	58132912 -- 58133200
+	58133200 [label=expressao_simples]
+	58132848 [label=expressao_simples]
+	58133200 -- 58132848
+	58132848 [label=expressao_simples]
+	58132816 [label=expressao_aditiva]
+	58132848 -- 58132816
+	58132816 [label=expressao_aditiva]
+	58131440 [label=expressao_multiplicativa]
+	58132816 -- 58131440
+	58131440 [label=expressao_multiplicativa]
+	58132592 [label=expressao_unaria]
+	58131440 -- 58132592
+	58132592 [label=expressao_unaria]
+	58132752 [label=fator]
+	58132592 -- 58132752
+	58132752 [label=fator]
+	58118256 [label=var]
+	58132752 -- 58118256
+	16873804016 [label=i]
+	58118256 -- 16873804016
+	58118256 [label=var]
+	58132880 [label=operador_relacional]
+	58133200 -- 58132880
+	17195846411 [label="<"]
+	58132880 -- 17195846411
+	58132880 [label=operador_relacional]
+	58133168 [label=expressao_aditiva]
+	58133200 -- 58133168
+	58133168 [label=expressao_aditiva]
+	58133136 [label=expressao_multiplicativa]
+	58133168 -- 58133136
+	58133136 [label=expressao_multiplicativa]
+	58133040 [label=expressao_unaria]
+	58133136 -- 58133040
+	58133040 [label=expressao_unaria]
+	58132976 [label=fator]
+	58133040 -- 58132976
+	58132976 [label=fator]
+	58132784 [label=var]
+	58132976 -- 58132784
+	17448699215 [label=tam]
+	58132784 -- 17448699215
+	58132784 [label=var]
+	58133328 [label=declaracao]
+	58133392 -- 58133328
+	58133328 [label=declaracao]
+	58131856 [label=declaracao_funcao]
+	58133328 -- 58131856
+	58131856 [label=declaracao_funcao]
+	57977328 [label=tipo]
+	58131856 -- 57977328
+	1742643843 [label=inteiro]
+	57977328 -- 1742643843
+	57977328 [label=tipo]
+	58134352 [label=cabecalho]
+	58131856 -- 58134352
+	1744407603 [label=principal]
+	58134352 -- 1744407603
+	58134352 [label=cabecalho]
+	58133360 [label=lista_parametros]
+	58134352 -- 58133360
+	58133360 [label=lista_parametros]
+	58133424 [label=vazio]
+	58133360 -- 58133424
+	58133424 [label=vazio]
+	58134416 [label=corpo]
+	58134352 -- 58134416
+	58134416 [label=corpo]
+	58134288 [label=corpo]
+	58134416 -- 58134288
+	58134288 [label=corpo]
+	58133872 [label=corpo]
+	58134288 -- 58133872
+	58133872 [label=corpo]
+	58133072 [label=corpo]
+	58133872 -- 58133072
+	58133072 [label=corpo]
+	58133520 [label=vazio]
+	58133072 -- 58133520
+	58133520 [label=vazio]
+	58133840 [label=acao]
+	58133872 -- 58133840
+	58133840 [label=acao]
+	58133808 [label=expressao]
+	58133840 -- 58133808
+	58133808 [label=expressao]
+	58133616 [label=expressao_logica]
+	58133808 -- 58133616
+	58133616 [label=expressao_logica]
+	58133680 [label=expressao_simples]
+	58133616 -- 58133680
+	58133680 [label=expressao_simples]
+	58133104 [label=expressao_aditiva]
+	58133680 -- 58133104
+	58133104 [label=expressao_aditiva]
+	58133744 [label=expressao_multiplicativa]
+	58133104 -- 58133744
+	58133744 [label=expressao_multiplicativa]
+	58133712 [label=expressao_unaria]
+	58133744 -- 58133712
+	58133712 [label=expressao_unaria]
+	58133552 [label=fator]
+	58133712 -- 58133552
+	58133552 [label=fator]
+	58070704 [label=chamada_funcao]
+	58133552 -- 58070704
+	17444430415 [label=preencheVetor]
+	58070704 -- 17444430415
+	58070704 [label=chamada_funcao]
+	58133488 [label=lista_argumentos]
+	58070704 -- 58133488
+	58133488 [label=lista_argumentos]
+	58133648 [label=vazio]
+	58133488 -- 58133648
+	58133648 [label=vazio]
+	58134256 [label=acao]
+	58134288 -- 58134256
+	58134256 [label=acao]
+	58134224 [label=expressao]
+	58134256 -- 58134224
+	58134224 [label=expressao]
+	58134032 [label=expressao_logica]
+	58134224 -- 58134032
+	58134032 [label=expressao_logica]
+	58134064 [label=expressao_simples]
+	58134032 -- 58134064
+	58134064 [label=expressao_simples]
+	58134000 [label=expressao_aditiva]
+	58134064 -- 58134000
+	58134000 [label=expressao_aditiva]
+	58134192 [label=expressao_multiplicativa]
+	58134000 -- 58134192
+	58134192 [label=expressao_multiplicativa]
+	58134096 [label=expressao_unaria]
+	58134192 -- 58134096
+	58134096 [label=expressao_unaria]
+	58133776 [label=fator]
+	58134096 -- 58133776
+	58133776 [label=fator]
+	58133968 [label=chamada_funcao]
+	58133776 -- 58133968
+	17450692814 [label=bubble_sort]
+	58133968 -- 17450692814
+	58133968 [label=chamada_funcao]
+	58133904 [label=lista_argumentos]
+	58133968 -- 58133904
+	58133904 [label=lista_argumentos]
+	58133584 [label=vazio]
+	58133904 -- 58133584
+	58133584 [label=vazio]
+	58134160 [label=acao]
+	58134416 -- 58134160
+	58134160 [label=acao]
+	58163344 [label=retorna]
+	58134160 -- 58163344
+	58163344 [label=retorna]
+	58163312 [label=expressao]
+	58163344 -- 58163312
+	58163312 [label=expressao]
+	58163280 [label=expressao_logica]
+	58163312 -- 58163280
+	58163280 [label=expressao_logica]
+	58163248 [label=expressao_simples]
+	58163280 -- 58163248
+	58163248 [label=expressao_simples]
+	58134512 [label=expressao_aditiva]
+	58163248 -- 58134512
+	58134512 [label=expressao_aditiva]
+	58134320 [label=expressao_multiplicativa]
+	58134512 -- 58134320
+	58134320 [label=expressao_multiplicativa]
+	58134384 [label=expressao_unaria]
+	58134320 -- 58134384
+	58134384 [label=expressao_unaria]
+	58134448 [label=fator]
+	58134384 -- 58134448
+	58134448 [label=fator]
+	58133936 [label=numero]
+	58134448 -- 58133936
+	58133936 [label=numero]
 }
