@@ -40,5 +40,6 @@ fim
 inteiro principal()
   preencheVetor()
   bubble_sort()
+  escreva(a)
   retorna(0)
 fim

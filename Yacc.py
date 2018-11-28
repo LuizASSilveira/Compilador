@@ -127,7 +127,7 @@ def p_parametro(p):
     parametro : tipo DOIS_PONTOS ID
                 | parametro ABRE_COL FECHA_COL
     '''
-    if(p[2] == 'DOIS_PONTOS'):
+    if(p[2] == ':'):
         p[0] = Tree('parametro', [p[1]], p[3])
     else: 
         p[0] = Tree('parametro', [p[1]])
@@ -182,13 +182,13 @@ def p_leia( p):
     '''
     leia : LEIA ABRE_PAR var FECHA_PAR
     '''
-    p[0] = Tree('leia', [], p[3])
+    p[0] = Tree('leia', [p[3]])
     
 def p_escreva( p):
     '''
     escreva : ESCREVA ABRE_PAR expressao FECHA_PAR
     '''
-    p[0] = Tree('escreva', [], p[3])
+    p[0] = Tree('escreva', [p[3]])
 
 def p_retorna( p):
     '''
@@ -311,7 +311,7 @@ def p_numero(p):
             | NUM_NOTACAO_CIENTIFICA
     '''
     p[0] = Tree('numero', [], p[1])
-
+    
 def p_chamada_funcao(p):
     '''
     chamada_funcao : ID ABRE_PAR lista_argumentos FECHA_PAR

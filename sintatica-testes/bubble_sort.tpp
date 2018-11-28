@@ -1,7 +1,7 @@
 inteiro: vet[10]
 inteiro: tam
 
-tam := 10
+tam := 10 + 5
 
 { preenche o vetor no pior caso }
 preencheVetor()
@@ -17,7 +17,7 @@ preencheVetor()
 fim
 
 { implementação do bubble sort }
-bubble_sort()
+bubble_sort(inteiro:a,flutuante:b)
   inteiro: i
   i := 0
   repita
@@ -39,6 +39,6 @@ fim
 { programa principal }
 inteiro principal()
   preencheVetor()
-  bubble_sort()
+  bubble_sort(a,b,c,d)
   retorna(0)
 fim

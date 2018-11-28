@@ -14,7 +14,6 @@ reserved = {
     'leia':'LEIA', 
     'escreva':'ESCREVA',
 }
-
 # Lista com Tokens
 tokens = [
     'SOMA',
