@@ -46,3 +46,11 @@ def geraArvoreGraph(no, Erros, bol):
                 grafico.node_attr.update(color='lightblue2', style='filled')
                 grafico.view()
 
+
+def visaoSemantica(no):
+    
+    if(no):
+        grafico = Graph('G', filename='Tree.gv', strict=True)
+        desenhagrafico(no, grafico)
+        grafico.node_attr.update(color='lightblue2', style='filled')
+        grafico.view()

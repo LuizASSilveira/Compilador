@@ -4,11 +4,9 @@
 
 flutuante: a
 inteiro: b
-flutuante: H
 
 inteiro func()
   a := 10.2
-  H := 12.6
   retorna(a)
 fim
 

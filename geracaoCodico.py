@@ -2,125 +2,110 @@
 # -*- coding: utf-8 -*
 
 from llvmlite import ir
+from semantica import *
+import sys
 
-'''
-Este módulo contém uma função main, declarações de variáveis, operações e atribuições
-Será gerado um código em LLVM como este em C:
 
-int g;
-float h;
+def geraDeclaracaoVariaveis(node):
+    if(node.child[1].child):
+        nomeVariavel = node.child[1].type
+        if(scopoGera[0] == 'global'):
+            if(node.child[0].type == 'inteiro'):
+                tipoA = ir.ArrayType(ir.IntType(64),int(node.child[1].child[0].type))
+                arrayA = ir.GlobalVariable(modulo, tipoA, nomeVariavel)
+                arrayA.align = 16
+            else:
+                if(node.child[0].type == 'flutuante'):
+                    tipoA = ir.ArrayType(ir.FloatType(), node.child[1].child[0].type)
+                    arrayA = ir.GlobalVariable(modulo, tipoA, nomeVariavel)
+                    arrayA.align = 16
+        # else:
+        #     if(node.child[0].type == 'inteiro'):
+        #         builder.alloca(ir.IntType(32), nomeVariavel)
+            
+        #     if(node.child[0].type == 'flutuante'):
+        #         builder.alloca(ir.FloatType(), nomeVariavel)
+            
+    else:
+        if(scopoGera[0] == 'global'):
+            for i in range(1,len(node.child)):
 
-int main(){
-  int a = 1;
-  float b = 1.0;
-  
-  g = 10;
-  h = 10.0;
-  a = a + 10;
-  b = b + h;
-  
-  return 0;
-}
+                nomeVariavel = node.child[i].type
+                if(node.child[0].type == 'inteiro'):
+                    var = ir.GlobalVariable(modulo, ir.IntType(32), nomeVariavel)
+                    var.initializer = ir.Constant(ir.IntType(32), 0)
+                    var.linkage = 'common'
+                    var.align = 4
+            
+                else:
+                    if(node.child[0].type == 'flutuante'):
+                        var = ir.GlobalVariable(modulo, ir.FloatType(), nomeVariavel)
+                        var.initializer = ir.Constant(ir.FloatType(), 0)
+                        var.linkage = 'common'
+                        var.align = 4
 
-'''
 
-# Cria o módulo.
-module = ir.Module('meu_modulo.bc')
+def geraDeclaracaoFuncao(no):
+    nomeF = no.type
+    if(no.type == 'principal'):
+        nomeF = 'main'
 
-# Variável inteira global g
-g = ir.GlobalVariable(module, ir.IntType(32), "g")
-# Inicializa a variavel g
-g.initializer = ir.Constant(ir.IntType(32), 0)
-# Linkage = common
-g.linkage = "common"
-# Define o alinhamento em 4
-g.align = 4
+    if(len(no.child) > 1):
+        if(no.child[1].child[0].child[0].type == 'vazio'): #função sem parametros
+            if(no.child[0].value == 'inteiro'):
+                funcao = ir.Function(modulo, ir.FunctionType(ir.IntType(32), ()), nomeF)
+            else:
+                funcao = ir.Function(modulo, ir.FunctionType(ir.FloatType(), ()), nomeF)
+        else:
 
-# Variável float global h
-h = ir.GlobalVariable(module, ir.FloatType(), "h")
-# Inicializa a variavel h
-h.initializer = ir.Constant(ir.FloatType(), 0.0)
-# Linkage = common
-h.linkage = "common"
-# Define o alinhamento em 4
-h.align = 4
+            parametros = []
+            for parans in no.child[1].child[0].child: #pega Parametros
+                if(parans.type == 'flutuante'):
+                    parametros.append((ir.FloatType() , parans.child[0].type))
+                else:
+                    parametros.append((ir.IntType(32), parans.child[0].type))
 
-# Define o retorno da função main
-Zero32 = ir.Constant(ir.IntType(32), 0)
-# Cria função main
-t_func_main = ir.FunctionType(ir.IntType(32), ())
-# Declara função main
-main = ir.Function(module, t_func_main, name='main')
+            print(parametros)
 
-# Declara o bloco de entrada
-entryBlock = main.append_basic_block('entry')
-endBasicBlock = main.append_basic_block('exit')
+            if(no.child[0].value == 'inteiro'):
+                funcao = ir.Function(modulo, ir.FunctionType(ir.IntType(32), (parametros)), nomeF)
+            else:
+                funcao = ir.Function(modulo, ir.FunctionType(ir.FloatType(), (parametros)), nomeF)
 
-# Adiciona o bloco de entrada
-builder = ir.IRBuilder(entryBlock)
+def geraCodigo(no):
 
-# Cria o valor de retorno e inicializa com zero
-returnVal = builder.alloca(ir.IntType(32), name='retorno')
-builder.store(Zero32, returnVal)
+    if(not no):
+        return
 
-# int a = 1;
-# float b = 1.0
+    if(no.type == 'declaracao_funcao'):
+        if(no.child.__len__() == 1):
+            scopo.insert(0, no.child[0].value)
+        
+        geraDeclaracaoFuncao(no)
+          
+    if(no.type == 'declaracao_variaveis'):
+        geraDeclaracaoVariaveis(no)
 
-# Variável inteira 'a'
-# Aloca na memória variável a do tipo inteiro com nome 'a'
-a = builder.alloca(ir.IntType(32), name="a")
-# Define o alinhamento
-a.align = 4
-# Cria uma constante pra armazenar o numero 1
-num1 = ir.Constant(ir.IntType(32), 1)
-# Armazena o 1 na variave 'a'
-builder.store(num1, a)
 
-# Variavel float b
-# Aloca na memoria
-b = builder.alloca(ir.FloatType(), name="b")
-# Define o alinhamento
-b.align = 4
-# Cria uma constante pra armazenar o numero 1
-num1Float = ir.Constant(ir.FloatType(), 1.0)
-# Armazena o 1.0 na variavel 'b'
-builder.store(num1Float, b)
 
-# g = 10
-# Outra maneira de fazer o store (sem precisar criar constante pra armazenar numero)
-builder.store(ir.Constant(ir.IntType(32), 10), g)
+    for filho in no.child:
+        geraCodigo(filho)
 
-# h = 10.0
-builder.store(ir.Constant(ir.FloatType(), 10.0), h)
 
-# a = a + 10
-a_temp = builder.load(a, "")
-num10 = ir.Constant(ir.IntType(32), 10)
-# temp = builder.add(a_temp, num10, name='temp', flags=())
-temp = builder.add(a_temp, num10, name = 'temp', flags= ())
+#arquivo
+arq = open(sys.argv[1], 'r', encoding='utf-8')
+data = arq.read()
+arq.close()
 
-# Armazena o temp (a + 10) no a
-builder.store(temp, a)
+scopoGera = []
+scopoGera.append('global')
 
-# b = b + h
-b_temp = builder.load(b, "")
-h_temp = builder.load(h, "")
-temp2 = builder.add(b_temp, h_temp, name='temp2')
-# Armazena temp2 em b
-builder.store(temp2, b)
+modulo = ir.Module('Meu_modulo')
 
-# Cria um salto para o bloco de saída
-builder.branch(endBasicBlock)
+# no = semanticaGeracodigo(data, False)
+no = semanticaGeracodigo(data)
+# printTabelaSimbolo(tabelaSimbolo)
 
-# Adiciona o bloco de saida
-builder.position_at_end(endBasicBlock)
 
-# return 0
-# Cria o return
-returnVal_temp = builder.load(returnVal, name='', align=4)
-builder.ret(returnVal_temp)
-
-arquivo = open('vars.ll', 'w')
-arquivo.write(str(module))
-arquivo.close()
-print(module)
+geraCodigo(no)
+print(modulo)

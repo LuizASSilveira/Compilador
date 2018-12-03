@@ -1,8 +1,12 @@
-from auxiliar import geraArvoreGraph, Tree
+from auxiliar import visaoSemantica, Tree
 from lex import lexer
 from Yacc import parser, contemErros
 import sys
 from collections import defaultdict
+import colorama
+
+errosSemanticos = []
+warningSemantico = []
 
 def pegaVariavel(no):
     variavel = []
@@ -28,13 +32,16 @@ def arrayFilho(tam,var):
 
 def podaDeclaracao_variaveis(no):
     var = pegaVariavel(no)
+    
     qtdFilhos = no.child.__len__()
 
-    if(no.child[1].child[0].child.__len__() == 1):
+    if(no.child[1].child[0].child.__len__() != 0 and no.child[1].child[0].type != 'lista_variaveis'):
+        
         filho = arrayFilho(var.__len__(), var)
+        
         no.child[0] = Tree(var[0])
         no.child[1] = Tree(var[1], filho)
-                
+              
     else:
         for i in range(var.__len__()):
             if(i < qtdFilhos):
@@ -249,10 +256,15 @@ def declaracaoVariaveis(no):
         
     else:
         var = []
+        
         for v in no.child[1].child:
             var.append(v.type)
 
-        tabelaSimbolo.append(elTab(scopo[0], tipo, 'declaracaoVariaveis', [no.child[1].type],var))#modificado
+        if(len (no.child[1].child) == 0):
+            tabelaSimbolo.append(elTab(scopo[0], tipo, 'declaracaoVariaveis',var))#modificado
+        else:
+            tabelaSimbolo.append(
+                elTab(scopo[0], tipo, 'declaracaoVariaveis', [no.child[1].type], var))  # modificado
 
 def retornaNoType(no):
     variavel = []
@@ -285,7 +297,6 @@ def chamadaFuncao(no):
     listArg = []
     for a in no.child[0].child:
         listArg.append(a.type)
-
     tabelaSimbolo.append(elTab(scopo[0], '', 'chamadaFuncao', no.value, listArg))
 
 def cabecalho(no):
@@ -301,7 +312,6 @@ def cabecalho(no):
 
     for cab in cabDelaracao:
         tabelaSimbolo.append(elTab(scopo[0], cab[0], 'declaracaoVariaveis', [cab[1]]))
-
 
 def retorna(no):
     if(not len(no.child[0].child)):
@@ -374,7 +384,7 @@ def testNumero(val):
             return val
 
 def notSimbolo(var):
-    if(var == '/' or var == '*' or var == '-' or var == '+' or var == '>' or var == '=' or var == '<' or var == '<=' or var == '>='):
+    if(var == '/' or var == '*' or var == '-' or var == '+' or var == '>' or var == '=' or var == '<' or var == '<=' or var == '>=' or var =='inteiro' or var == 'flutuante'):
         return False
     else:
         return True
@@ -384,23 +394,24 @@ def testaPrincipal(tabelaSimbolo):
         if(obj.scopo == 'principal'):
             testPrincipalRetorno(tabelaSimbolo)  
             return     
-    print('Erro: Função principal não declarada')
+    errosSemanticos.append('Erro: Função principal não declarada')
 
 def testIndiceVetor(tabelaSimbolo):
+    pass
     for tb in tabelaSimbolo:
         if(tb.acao == 'declaracaoVariaveis'):
             for v in tb.aux:
                 if('.' in v):
-                   print('Erro: índice de array ', tb.valor[0], ' não inteiro')
+                    errosSemanticos.append('Erro: índice de array '+ str(v) + ' não inteiro')
+                    return
     return
 
 def testPrincipalRetorno(tabelaSimbolo):
     for ret in tabelaSimbolo:
-        if(ret.scopo == 'principal' and ret.acao == 'retorna' and ret.aux.__len__() == 0 ):
+        if(ret.scopo == 'principal' and ret.acao == 'retorna' and ret.aux.__len__() > 0):
+        # if(ret.scopo == 'principal' and ret.acao == 'retorna'):
             return
-    
-    print('Erro: Função principal deveria retornar inteiro')  
-
+    errosSemanticos.append('Erro: Função principal deveria retornar inteiro')  
 
 def testFuncaoChamdaeNaoDeclarada(tabelaSimbolo):
     declarado = []
@@ -419,7 +430,7 @@ def testFuncaoChamdaeNaoDeclarada(tabelaSimbolo):
 
         for n in naoD:
             if(n != 'principal'):
-                print('Erro: Chamada a função "'+ n +'" que não foi declarada')
+                errosSemanticos.append('Erro: Chamada a função "'+ n +'" que não foi declarada')
 
 def testParamError(tabelaSimbolo):
     declarado = {}
@@ -439,7 +450,7 @@ def testParamError(tabelaSimbolo):
             return
                 
         if(declarado[cabTam][1] != funcChamado[cabTam][1]):
-            print('Error: Chamada de função "' + cabTam +'" com número incorreto de variaveis')
+           errosSemanticos.append('Erro: Chamada de função "' + cabTam + '" com número incorreto de argumentos')
                 
 def descobreTipo(tab,tabelaSimbolo):
     resp = ''
@@ -458,13 +469,15 @@ def descobreTipo2(tab,tabelaSimbolo):
     fun = False
     for aux in tabelaSimbolo:
         if(aux.acao == 'declaracaoVariaveis'):
-            if(aux.valor[0] == tab):
-                resp = aux.tipo
+            for v in aux.valor:
+                if(v == tab):
+                    resp = aux.tipo
             
         elif(aux.valor == tab and aux.acao == 'declaracao_funcao'):
             resp = aux.tipo
             fun = True
             return resp, fun
+
     return resp, fun
 
 def testAtribuicaoIncorreta(tabelaSimbolo):
@@ -475,36 +488,38 @@ def testAtribuicaoIncorreta(tabelaSimbolo):
             atr.append(aux)
     
     for a in atr:
-        tipo = descobreTipo(a, tabelaSimbolo)               
+        tipo = descobreTipo(a, tabelaSimbolo)     
+        
         if(tipo == '' and type(tipo) == 'str'):
-            print('Erro: Variável ' + a + ' não declarada')
+            errosSemanticos.append('Erro2: Variável ' + a + ' não declarada')
             return
 
         for aux in a.aux:
             if(aux != '+' and aux != '-' and aux != '/' and aux != '*'):   
                 if('.' in str(aux)):
                     if(tipo != 'flutuante'):
-                        print('Aviso: Coerção implícita do valor atribuído para"' + str(a.valor) + '"')
+                        warningSemantico.append('Aviso: Coerção implícita do valor atribuído para"' + str(a.valor) + '"')
                         return
                 else:
                     try:
                         tipo2 = (int(aux))
                         if(tipo != 'inteiro'):
-                            print('Aviso: Coerção implícita do valor atribuído para "' + str(a.valor) + '"')
+                            warningSemantico.append('Aviso: Coerção implícita do valor atribuído para "' + str(a.valor) + '"')
                             return
 
                     except:
                         tipo2,fun = descobreTipo2(aux, tabelaSimbolo)
+                        # print('lllluizzzz', tipo2, aux)
                         if(tipo2 == ''):
-                            print('Erro: Variável "' + aux + '" não declarada')
+                            errosSemanticos.append('Erro3: Variável "' + aux + '" não declarada')
                             return
                         elif(tipo != tipo2 ):
                             if(fun):
-                                print('Aviso: Coerção implícita do valor retornado por "' + aux + '"')
-                                # print('Aviso: Atribuição de tipos distintos "', a.valor ,'"', tipo ,' e "', aux ,'" ',tipo2,'}')
+                                warningSemantico.append('Aviso: Coerção implícita do valor retornado por "' + aux + '"')
+                                # warningSemantico.appendnt('Aviso: Atribuição de tipos distintos "', a.valor ,'"', tipo ,' e "', aux ,'" ',tipo2,'}')
                             else:
-                                print('Aviso: Coerção implícita do valor "' + aux + '"')
-                                # print('Aviso: Atribuição de tipos distintos "', a.valor ,'"', tipo ,' e "', aux ,'" ',tipo2,'}') 
+                                warningSemantico.append('Aviso: Coerção implícita do valor "' + aux + '"')
+                                # warningSemantico.appendnt('Aviso: Atribuição de tipos distintos "', a.valor ,'"', tipo ,' e "', aux ,'" ',tipo2,'}') 
 
 def variavelJaDeclarada(tabelaSimbolo):
     listDeclara = []
@@ -512,7 +527,7 @@ def variavelJaDeclarada(tabelaSimbolo):
         if(aux.acao == 'declaracaoVariaveis'):
             var = str(aux.scopo) + str(aux.valor[0])
             if(var in listDeclara):
-                print('Aviso: Variável "' +aux.valor[0] + '" já declarada anteriormente')
+                warningSemantico.append('Aviso: Variável "' +aux.valor[0] + '" já declarada anteriormente')
             else:
                 listDeclara.append(var)
 
@@ -546,7 +561,7 @@ def variavelNaoUtilizada(tabelaSimbolo):
     cont = 0 
     if(len(naoUti) > 0):
         for n in naoUti:
-            print('Aviso: Variável "' + n + '" declarada e não utilizada')
+            warningSemantico.append('Aviso: Variável "' + n + '" declarada e não utilizada')
             cont += 1
 
     if(cont == 0):
@@ -576,29 +591,28 @@ def variavelDeclaradaNaoInicialisada(tabelaSimbolo):
                     
                 elif(tb.acao == 'leia' and (tb.scopo == 'global' or tb.scopo == s)):
                     listAtri.append(str(tb.aux[0]))
-                    
+                
                 elif(tb.acao == 'cabecalho' and tb.scopo == s):
                     if(tb.aux[0] != 'vazio'):
                         for l in tb.aux:
-                            print(l)
+                            # print(l)
                             if(type(l) == type(list('a'))):
                                 listParam.insert(0,l[1])
                             else:
                                 listParam.insert(0,l)
+            
             listIDeclarada = set(listIDeclarada)
             listAtri = set(listAtri)
             # print('+++++',listParam)
             listParam = set(listParam)
+            listAtrGlobal = set(listAtrGlobal)
 
-            # print(listIDeclarada)
-            # print(listAtri)
-            # print(listAtrGlobal)
-            # print('\n\n\n\n')
-        
-            sob = (listIDeclarada - listAtri) - listParam
-            sob = sob - set(listAtrGlobal)
+            sob = (listIDeclarada - listAtri) - listParam            
+            sob = sob - listAtrGlobal
+
+            # print(sob)
             for s in sob:
-                print('Aviso: Variável "' + s + '" declarada e não inicializada')
+                warningSemantico.append('Aviso: Variável "' + s + '" declarada e não inicializada')
 
 def variavelNaoDeclarada(tabelaSimbolo): #nao declarada e utilisada
     funcDeclarada = []
@@ -616,16 +630,40 @@ def variavelNaoDeclarada(tabelaSimbolo): #nao declarada e utilisada
             if(len(aux.aux) and aux.aux[0] != 'vazio' and aux.scopo == sco and aux.acao != 'cabecalho'):
                 varUtilisada[sco].append(aux.aux)
 
-    for sco in scopo:
-        for uti in varUtilisada[sco]:
-            if(testNumero(uti[0]) and notSimbolo(uti[0])):
-                if(((uti[0] != 'inteiro' and uti[0] != 'flutante') and  not uti in varDeclarada[sco] and (not uti in varDeclarada['global'])) and (not uti[0] in funcDeclarada)):
-                    print('Erro: Variável "' + str(uti[0]) + '" não declarada')
+    varDeclarada2 = {}
+    varUtilisada2 = {}
+
+    for x in varDeclarada.keys():
+        a1 = varDeclarada[x]
+        saida = []
+        for aux1 in a1:
+            for aux2 in aux1:
+                if(testNumero(aux2) and notSimbolo(aux2)):
+                    saida.append(aux2)
+        varDeclarada2[x] = saida
+
+    for x in varUtilisada.keys():
+        a1 = varUtilisada[x]
+        saida = []
+        for aux1 in a1:
+            for aux2 in aux1:
+                if(testNumero(aux2) and notSimbolo(aux2)):
+                    saida.append(aux2)
+        varUtilisada2[x] = saida
+    
+    # for sco in scopo:
+
+
+    # for sco in scopo:
+    #     for uti in varUtilisada[sco]:
+    #         if(testNumero(uti[0]) and notSimbolo(uti[0])):
+    #             if(((uti[0] != 'inteiro' and uti[0] != 'flutante') and  (not uti in varDeclarada[sco]) and (not uti in varDeclarada['global'])) and (not uti[0] in funcDeclarada)):
+    #                 errosSemanticos.append('Erro: Variável "' + str(uti[0]) + '" não declarada')
 
 def chamadaPrincipalNaoPermitida(tabelaSimbolo):
     for aux in tabelaSimbolo:
         if(aux.scopo != 'principal' and aux.acao == 'chamadaFuncao' and aux.valor == 'principal'):
-            print('Erro: Chamada para a função principal não permitida')
+            errosSemanticos.append('Erro: Chamada para a função principal não permitida')
 
 def funcTipoRetornoErrado(tabelaSimbolo):
     for tb in tabelaSimbolo:
@@ -652,12 +690,15 @@ def funcTipoRetornoErrado(tabelaSimbolo):
                     if('' in dif ):
                         dif.remove('')
                     if(len(dif)):
-                        print("Erro: Função '" + tb.valor +"' do tipo '" + tb.tipo + "' retornando '" + dif[0]+ "'")
+                        if(dif[0] == 'flutuante'):
+                            errosSemanticos.append("Erro: Função '" + tb.valor +"' do tipo '" + tb.tipo + "' retornando '" + dif[0]+ "'")
+                        else:
+                            warningSemantico.append("Aviso: Função '" + tb.valor +"' do tipo '" + tb.tipo + "' retornando '" + dif[0]+ "'")
 
 def chamadaRecursivaPrincipal(tabelaSimbolo):
     for aux in tabelaSimbolo:
         if(aux.acao =='chamadaFuncao' and aux.valor == 'principal' and aux.scopo == 'principal'):
-            print('Aviso: Chamada recursiva para principal')
+            warningSemantico.append('Aviso: Chamada recursiva para principal')
 
 def funcDeclaradaNaoUtilisada(tabelaSimbolo):
     funcChamada = []
@@ -677,7 +718,7 @@ def funcDeclaradaNaoUtilisada(tabelaSimbolo):
     if(len(resp) != 0):
         resp = list(resp)
         for r in resp:
-            print('Aviso: Função "'+ r + '" declarada, mas não utilizada')
+            warningSemantico.append('Aviso: Função "'+ r + '" declarada, mas não utilizada')
 
 def msgWarning(tabelaSimbolo):
     variavelNaoDeclarada(tabelaSimbolo)
@@ -705,17 +746,66 @@ def poda2(no):
     for filho in no.child:
         poda2(filho)
 
-
 tabelaSimbolo = []
 scopo = []
 scopo.append('global')
-arq = open(sys.argv[1], 'r', encoding='utf-8')
-data = arq.read()
-arq.close()
-result = parser.parse(data, tracking=True)
-podaArvore(result)
-tabela(result)
-# printTabelaSimbolo(tabelaSimbolo)
-msgWarning(tabelaSimbolo)
-poda2(result)
-geraArvoreGraph(result, contemErros, True)
+
+def analiseSemantica(data):
+    result = parser.parse(data, tracking=True)
+   
+    global errosSemanticos, warningSemantico
+    # visaoSemantica(result)
+    podaArvore(result)
+    tabela(result)
+    
+
+    # printTabelaSimbolo(tabelaSimbolo)
+    if(len(tabelaSimbolo) != 0):
+        msgWarning(tabelaSimbolo)
+
+        # poda2(result)
+        colorama.init()
+        print('\n')
+        if(len(errosSemanticos) > 0):  
+            errosSemanticos = list(set(errosSemanticos))    
+            for er in errosSemanticos:        
+                print(colorama.Fore.LIGHTYELLOW_EX + er)
+        # else:
+        #     visaoSemantica(result)
+
+        aletSemanticos = list(set(warningSemantico))
+        for war in aletSemanticos:
+            print(colorama.Fore.LIGHTYELLOW_EX + war)
+
+        print('\n')
+
+def semanticaGeracodigo(data,pr = True):
+    result = parser.parse(data, tracking=True)
+
+    global errosSemanticos, warningSemantico
+    # visaoSemantica(result)
+    podaArvore(result)
+    tabela(result)
+
+    # printTabelaSimbolo(tabelaSimbolo)
+    if(len(tabelaSimbolo) != 0):
+        msgWarning(tabelaSimbolo)
+
+        poda2(result)
+        colorama.init()
+        print('\n')
+        if(len(errosSemanticos) > 0):
+
+            errosSemanticos = list(set(errosSemanticos))
+            for er in errosSemanticos:
+                print(colorama.Fore.LIGHTYELLOW_EX + er)
+        else:
+            if(pr):
+                visaoSemantica(result)
+
+        aletSemanticos = list(set(warningSemantico))
+        for war in aletSemanticos:
+            print(colorama.Fore.LIGHTYELLOW_EX + war)
+
+        print('\n')
+    return result
