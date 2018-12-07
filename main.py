@@ -34,7 +34,7 @@ try:
         analiseSemantica(data)
     else:
         if(sys.argv[1]):
-            if(sys.argv[1] == '--lexico'):
+            if(sys.argv[2] == '--lexico'):
                 lexico(data)
             elif(sys.argv[2] == '--sintatico'):
                 sintatico(data)

@@ -758,7 +758,6 @@ def analiseSemantica(data):
     podaArvore(result)
     tabela(result)
     
-
     # printTabelaSimbolo(tabelaSimbolo)
     if(len(tabelaSimbolo) != 0):
         msgWarning(tabelaSimbolo)
@@ -769,14 +768,15 @@ def analiseSemantica(data):
         if(len(errosSemanticos) > 0):  
             errosSemanticos = list(set(errosSemanticos))    
             for er in errosSemanticos:        
-                print(colorama.Fore.LIGHTYELLOW_EX + er)
-        # else:
-        #     visaoSemantica(result)
+                print(colorama.Fore.LIGHTRED_EX + er)
+        else:
+            visaoSemantica(result)
 
         aletSemanticos = list(set(warningSemantico))
         for war in aletSemanticos:
             print(colorama.Fore.LIGHTYELLOW_EX + war)
-
+        print(colorama.Style.RESET_ALL)
+        
         print('\n')
 
 def semanticaGeracodigo(data,pr = True):
@@ -795,10 +795,10 @@ def semanticaGeracodigo(data,pr = True):
         colorama.init()
         print('\n')
         if(len(errosSemanticos) > 0):
-
             errosSemanticos = list(set(errosSemanticos))
             for er in errosSemanticos:
-                print(colorama.Fore.LIGHTYELLOW_EX + er)
+                print(colorama.Fore.LIGHTMAGENTA_EX + er)
+                
         else:
             if(pr):
                 visaoSemantica(result)
@@ -806,6 +806,6 @@ def semanticaGeracodigo(data,pr = True):
         aletSemanticos = list(set(warningSemantico))
         for war in aletSemanticos:
             print(colorama.Fore.LIGHTYELLOW_EX + war)
-
+        print(colorama.Style.RESET_ALL)
         print('\n')
     return result

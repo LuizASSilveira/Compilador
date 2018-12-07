@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*
 
-from llvmlite import ir
-from semantica import *
 import sys
+
+from llvmlite import ir
+
+from semantica import *
 
 
 def geraDeclaracaoVariaveis(node):
@@ -67,10 +69,10 @@ def geraDeclaracaoFuncao(no):
 
             print(parametros)
 
-            if(no.child[0].value == 'inteiro'):
-                funcao = ir.Function(modulo, ir.FunctionType(ir.IntType(32), (parametros)), nomeF)
-            else:
-                funcao = ir.Function(modulo, ir.FunctionType(ir.FloatType(), (parametros)), nomeF)
+            # if(no.child[0].value == 'inteiro'):
+            #     funcao = ir.Function(modulo, ir.FunctionType(ir.IntType(32), (parametros)), nomeF)
+            # else:
+            #     funcao = ir.Function(modulo, ir.FunctionType(ir.FloatType(), (parametros)), nomeF)
 
 def geraCodigo(no):
 
@@ -81,16 +83,15 @@ def geraCodigo(no):
         if(no.child.__len__() == 1):
             scopo.insert(0, no.child[0].value)
         
-        geraDeclaracaoFuncao(no)
           
     if(no.type == 'declaracao_variaveis'):
         geraDeclaracaoVariaveis(no)
-
+    elif(no.type == 'declaracao_funcao'):
+        geraDeclaracaoFuncao(no)
 
 
     for filho in no.child:
         geraCodigo(filho)
-
 
 #arquivo
 arq = open(sys.argv[1], 'r', encoding='utf-8')
@@ -102,8 +103,8 @@ scopoGera.append('global')
 
 modulo = ir.Module('Meu_modulo')
 
-# no = semanticaGeracodigo(data, False)
-no = semanticaGeracodigo(data)
+no = semanticaGeracodigo(data, False)
+# no = semanticaGeracodigo(data)
 # printTabelaSimbolo(tabelaSimbolo)
 
 
