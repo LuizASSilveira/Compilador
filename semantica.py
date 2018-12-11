@@ -793,12 +793,11 @@ def semanticaGeracodigo(data,pr = True):
 
         poda2(result)
         colorama.init()
-        print('\n')
         if(len(errosSemanticos) > 0):
+            print('\n')
             errosSemanticos = list(set(errosSemanticos))
             for er in errosSemanticos:
-                print(colorama.Fore.LIGHTMAGENTA_EX + er)
-                
+                print(colorama.Fore.LIGHTMAGENTA_EX + er)  
         else:
             if(pr):
                 visaoSemantica(result)
@@ -807,5 +806,5 @@ def semanticaGeracodigo(data,pr = True):
         for war in aletSemanticos:
             print(colorama.Fore.LIGHTYELLOW_EX + war)
         print(colorama.Style.RESET_ALL)
-        print('\n')
+        
     return result

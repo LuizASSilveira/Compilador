@@ -3,6 +3,7 @@ from lex import lexer
 from Yacc import parser,contemErros
 import sys
 from semantica import analiseSemantica
+from geraCodigoV2 import geracaoCodico
 
 def lexico(cod):
     lexer.input(cod)
@@ -23,6 +24,9 @@ def sintatico(cod, bol = True):
 def semantico(data):
     analiseSemantica(data)
       
+def codigo(data):
+    geracaoCodico(data)
+
 arq = open(sys.argv[1],'r', encoding='utf-8')
 data = arq.read()
 arq.close()
@@ -32,6 +36,7 @@ try:
         lexico(data)
         sintatico(data)
         analiseSemantica(data)
+        codigo(data)
     else:
         if(sys.argv[1]):
             if(sys.argv[2] == '--lexico'):
@@ -40,6 +45,8 @@ try:
                 sintatico(data)
             elif(sys.argv[2] == '--semantico'):
                 semantico(data)
+            elif(sys.argv[2] == '--geracaoCodigo'):
+                codigo(data)
             else:
                 print(
                     'Comando esperados:',
