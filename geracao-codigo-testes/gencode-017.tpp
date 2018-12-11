@@ -9,6 +9,7 @@ inteiro principal()
 	
 	leia(x)
 	leia(y)
+	
 	escreva(x)
 	escreva(y)
 	

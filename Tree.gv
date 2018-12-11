@@ -1,119 +1,119 @@
 strict graph G {
 	node [color=lightblue2 style=filled]
-	53446096 [label=programa]
-	53947664 [label=lista_declaracoes]
-	53446096 -- 53947664
-	53947664 [label=lista_declaracoes]
-	53902864 [label=lista_declaracoes]
-	53947664 -- 53902864
-	53902864 [label=lista_declaracoes]
-	53477520 [label=declaracao_variaveis]
-	53902864 -- 53477520
-	53477520 [label=declaracao_variaveis]
-	53945840 [label=inteiro]
-	53477520 -- 53945840
-	53945840 [label=inteiro]
-	53446128 [label=a]
-	53477520 -- 53446128
-	53446128 [label=a]
-	53946480 [label=declaracao_funcao]
-	53947664 -- 53946480
-	53946480 [label=declaracao_funcao]
-	53944528 [label=tipo]
-	53946480 -- 53944528
-	1618442162 [label=inteiro]
-	53944528 -- 1618442162
-	53944528 [label=tipo]
-	53945328 [label=cabecalho]
-	53946480 -- 53945328
-	1592096002 [label=principal]
-	53945328 -- 1592096002
-	53945328 [label=cabecalho]
-	53944464 [label=lista_parametros]
-	53945328 -- 53944464
-	53944464 [label=lista_parametros]
-	53944752 [label=vazio]
-	53944464 -- 53944752
-	53944752 [label=vazio]
-	53947568 [label=corpo]
-	53945328 -- 53947568
-	53947568 [label=corpo]
-	53944976 [label=declaracao_variaveis]
-	53947568 -- 53944976
-	53944976 [label=declaracao_variaveis]
-	53944912 [label=inteiro]
-	53944976 -- 53944912
-	53944912 [label=inteiro]
-	53944816 [label=ret]
-	53944976 -- 53944816
-	53944816 [label=ret]
-	53945520 [label=atribuicao]
-	53947568 -- 53945520
-	53945520 [label=atribuicao]
-	53944944 [label=var]
-	53945520 -- 53944944
-	1556672645 [label=a]
-	53944944 -- 1556672645
-	53944944 [label=var]
-	53945104 [label=numero]
-	53945520 -- 53945104
-	17190936485 [label=10]
-	53945104 -- 17190936485
-	53945104 [label=numero]
-	53946832 [label=se]
-	53947568 -- 53946832
-	53946832 [label=se]
-	53946096 [label=expressao]
-	53946832 -- 53946096
-	53946096 [label=expressao]
-	53946032 [label=expressao_simples]
-	53946096 -- 53946032
-	53946032 [label=expressao_simples]
-	53945456 [label=">"]
-	53946032 -- 53945456
-	53945456 [label=">"]
-	53946000 [label=a]
-	53945456 -- 53946000
-	53946000 [label=a]
-	53945904 [label=5]
-	53945456 -- 53945904
-	53945904 [label=5]
-	53946736 [label=corpo]
-	53946832 -- 53946736
-	53946736 [label=corpo]
-	53946640 [label=atribuicao]
-	53946736 -- 53946640
-	53946640 [label=atribuicao]
-	53946064 [label=var]
-	53946640 -- 53946064
-	1618889927 [label=ret]
-	53946064 -- 1618889927
-	53946064 [label=var]
-	53946192 [label=numero]
-	53946640 -- 53946192
-	17190945927 [label=1]
-	53946192 -- 17190945927
-	53946192 [label=numero]
-	53947344 [label=corpo]
-	53946832 -- 53947344
-	53947344 [label=corpo]
-	53947248 [label=atribuicao]
-	53947344 -- 53947248
-	53947248 [label=atribuicao]
-	53946672 [label=var]
-	53947248 -- 53946672
-	1618900887 [label=ret]
-	53946672 -- 1618900887
-	53946672 [label=var]
-	53946800 [label=numero]
-	53947248 -- 53946800
-	53946800 [label=numero]
-	53947504 [label=retorna]
-	53947568 -- 53947504
-	53947504 [label=retorna]
-	53945232 [label=var]
-	53947504 -- 53945232
-	1618885125 [label=ret]
-	53945232 -- 1618885125
-	53945232 [label=var]
+	61590192 [label=programa]
+	62070192 [label=lista_declaracoes]
+	61590192 -- 62070192
+	62070192 [label=lista_declaracoes]
+	62033616 [label=lista_declaracoes]
+	62070192 -- 62033616
+	62033616 [label=lista_declaracoes]
+	61590448 [label=declaracao_variaveis]
+	62033616 -- 61590448
+	61590448 [label=declaracao_variaveis]
+	62068368 [label=inteiro]
+	61590448 -- 62068368
+	62068368 [label=inteiro]
+	61590256 [label=a]
+	61590448 -- 61590256
+	61590256 [label=a]
+	62069008 [label=declaracao_funcao]
+	62070192 -- 62069008
+	62069008 [label=declaracao_funcao]
+	62067056 [label=tipo]
+	62069008 -- 62067056
+	1858146642 [label=inteiro]
+	62067056 -- 1858146642
+	62067056 [label=tipo]
+	62067856 [label=cabecalho]
+	62069008 -- 62067856
+	1835261122 [label=principal]
+	62067856 -- 1835261122
+	62067856 [label=cabecalho]
+	62066832 [label=lista_parametros]
+	62067856 -- 62066832
+	62066832 [label=lista_parametros]
+	62067280 [label=vazio]
+	62066832 -- 62067280
+	62067280 [label=vazio]
+	62070096 [label=corpo]
+	62067856 -- 62070096
+	62070096 [label=corpo]
+	62067504 [label=declaracao_variaveis]
+	62070096 -- 62067504
+	62067504 [label=declaracao_variaveis]
+	62067440 [label=inteiro]
+	62067504 -- 62067440
+	62067440 [label=inteiro]
+	62067344 [label=ret]
+	62067504 -- 62067344
+	62067344 [label=ret]
+	62068048 [label=atribuicao]
+	62070096 -- 62068048
+	62068048 [label=atribuicao]
+	62067472 [label=var]
+	62068048 -- 62067472
+	1799838565 [label=a]
+	62067472 -- 1799838565
+	62067472 [label=var]
+	62067632 [label=numero]
+	62068048 -- 62067632
+	17258465925 [label=10]
+	62067632 -- 17258465925
+	62067632 [label=numero]
+	62069360 [label=se]
+	62070096 -- 62069360
+	62069360 [label=se]
+	62068624 [label=expressao]
+	62069360 -- 62068624
+	62068624 [label=expressao]
+	62068560 [label=expressao_simples]
+	62068624 -- 62068560
+	62068560 [label=expressao_simples]
+	62067984 [label=">"]
+	62068560 -- 62067984
+	62067984 [label=">"]
+	62068528 [label=a]
+	62067984 -- 62068528
+	62068528 [label=a]
+	62068432 [label=5]
+	62067984 -- 62068432
+	62068432 [label=5]
+	62069264 [label=corpo]
+	62069360 -- 62069264
+	62069264 [label=corpo]
+	62069168 [label=atribuicao]
+	62069264 -- 62069168
+	62069168 [label=atribuicao]
+	62068592 [label=var]
+	62069168 -- 62068592
+	1862671847 [label=ret]
+	62068592 -- 1862671847
+	62068592 [label=var]
+	62068720 [label=numero]
+	62069168 -- 62068720
+	17258475367 [label=1]
+	62068720 -- 17258475367
+	62068720 [label=numero]
+	62069872 [label=corpo]
+	62069360 -- 62069872
+	62069872 [label=corpo]
+	62069776 [label=atribuicao]
+	62069872 -- 62069776
+	62069776 [label=atribuicao]
+	62069200 [label=var]
+	62069776 -- 62069200
+	1862682807 [label=ret]
+	62069200 -- 1862682807
+	62069200 [label=var]
+	62069328 [label=numero]
+	62069776 -- 62069328
+	62069328 [label=numero]
+	62070032 [label=retorna]
+	62070096 -- 62070032
+	62070032 [label=retorna]
+	62067760 [label=var]
+	62070032 -- 62067760
+	1862667045 [label=ret]
+	62067760 -- 1862667045
+	62067760 [label=var]
 }

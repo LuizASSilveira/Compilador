@@ -17,8 +17,8 @@ class Geracao():
         self.gerarCodigo(self.no)
 
         # self.leiaInteiro = ir.Function(self.modulo, ir.FunctionType(ir.IntType(32), []), 'leia')
-        print(self.modulo)
-        print('\n')
+        # print(self.modulo)
+        # print('\n')
 
     def gerarCodigo(self,no):
         if(no.child[0].type == 'declaracao_funcao'):
@@ -198,6 +198,7 @@ class Geracao():
                 return val11
             val1 = self.builder.load(val11, self.scopoGera + '#' + val1)
         else:
+            # print(type(valAux))
             if(type(valAux) == float):
                 val1 = ir.Constant(ir.FloatType(), val1)
             else:
@@ -350,10 +351,10 @@ class Geracao():
             func = self.modulo.get_global(nomeFunc)
 
             parametros = []
-
+            
             for arg in no.child[1].child[0].child:
                 parametros.append(self.defineOperandos(arg.type))
-            
+            print(parametros)
             chamadaFun = self.builder.call(func, parametros, name= 'chamadaFun' )
             self.builder.store(chamadaFun, var)
 
@@ -400,7 +401,8 @@ class Geracao():
         var = self.defineOperandos(no.child[0].type,True)
 
         valor = self.builder.call(self.leiaFlutuante, [])
-        
+        #sitofp
+
         if('i32' in str(var.type)):
             valor = self.builder.fptosi(valor, ir.IntType(32))        
         
@@ -419,9 +421,13 @@ class Geracao():
             
 
 def geracaoCodico(data):
-    no = semanticaGeracodigo(data, False)
-    # no = semanticaGeracodigo(data)
-    Geracao(ir.Module('LUIZ2'),no)
+    # no = semanticaGeracodigo(data, False)
+    no = semanticaGeracodigo(data)
+    ger = Geracao(ir.Module('LUIZ2'),no)
+    print(str(ger.modulo))
+    arquivo = open('gera.ll', 'w')
+    arquivo.write(str(ger.modulo))
+    arquivo.close()
     # printTabelaSimbolo(tabelaSimbolo)
 
 

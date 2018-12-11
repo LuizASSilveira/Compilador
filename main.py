@@ -53,6 +53,7 @@ try:
                     '\t--lexico',
                     '\t--sintatico',
                     '\t--semantico',
+                    '\t--geracaoCodigo'
                 )
 
 except IndexError as er:
