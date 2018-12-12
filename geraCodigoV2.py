@@ -190,19 +190,27 @@ class Geracao():
         return val
 
     def defineOperandos(self,val1,leia=False):
-        valAux = self.ehNumero(val1)
-        tipe = type(valAux)
-        if(tipe != int and tipe != float):
-            val11 = self.qualScopo(val1)
-            if(leia):
-                return val11
-            val1 = self.builder.load(val11, self.scopoGera + '#' + val1)
-        else:
-            # print(type(valAux))
-            if(type(valAux) == float):
+        
+        if(type(val1) == int or type(val1) == float):
+
+            if(type(val1) == float):
                 val1 = ir.Constant(ir.FloatType(), val1)
             else:
                 val1 = ir.Constant(ir.IntType(32), val1)
+        
+        else:
+            aux = self.ehNumero(val1)
+            tipe = type(aux)
+            if(tipe != int and tipe != float and aux == False):
+                val11 = self.qualScopo(val1)
+                if(leia):
+                    return val11
+                val1 = self.builder.load(val11, self.scopoGera + '#' + val1)
+            else:
+                if(type(val1) == float):
+                    val1 = ir.Constant(ir.FloatType(), val1)
+                else:
+                    val1 = ir.Constant(ir.IntType(32), val1)
         return val1
 
     def se(self,no):
@@ -241,7 +249,6 @@ class Geracao():
 
     def retorna(self,no):
         if(no.child[0].type == 'var'):
-            
             var2 = no.child[0].value
             var2 = self.qualScopo(var2)
             aux = self.builder.load(var2, self.scopoGera + '#' + no.child[0].value)
@@ -304,27 +311,39 @@ class Geracao():
                     else:
                         p2.append(p)
         
-        a = self.builder.load(p2.pop(0))
+        a = p2.pop(0)
         b = p2.pop(0)
         c = p2.pop(0)
         if(not 'Constant' in str(type(c))):
             c = self.builder.load(c)
-        
+            
+        if(not 'Constant' in str(type(a))):
+            a = self.builder.load(a)
+
+        if(type(a) != type(b) and 'i32' in str(type(a))):
+            a = self.builder.fptosi(a, ir.IntType(32))
+            
         return self.calcula_expressao(a, b, c, var)
         
     def atribuicao(self,no):
         var = no.child[0].value
         if(no.child[1].type == 'numero'):
+            
             valor = self.qualScopo(var)
             
             value = no.child[1].value
-            if(str(valor.type) != 'i32*'):  # transforma instring em numero
-                num = ir.Constant(ir.FloatType(), float(value))
-            else:
-                num = ir.Constant(ir.IntType(32), int(value))
-           
-            self.builder.store(num, valor)
+            value = self.defineOperandos(value)
+
+            if( 'i32' in str(valor.type) and (not 'i32' in str(value.type))):
+                if(not 'i32' in str(var.type)):
+                    value = self.builder.sitofp(value, ir.FloatType())
+                else:
+                    value = self.builder.fptosi(value, ir.IntType(32))
+            
+            
+            self.builder.store(value, valor)
        
+        
         elif(no.child[1].type == 'var'):
             var1 = no.child[0].value
             var1 = self.qualScopo(var1)
@@ -340,6 +359,10 @@ class Geracao():
         elif(no.child[1].type == 'expressao_aditiva'):
             exp = self.expreAddAuxiliar(no.child[1], var)
             var = self.qualScopo(var)
+
+            if('i32' in str(var.type)):
+                exp = self.builder.fptosi(exp, ir.IntType(32))
+            
             
             self.builder.store(exp, var)
         
@@ -354,11 +377,20 @@ class Geracao():
             
             for arg in no.child[1].child[0].child:
                 parametros.append(self.defineOperandos(arg.type))
-            print(parametros)
+
             chamadaFun = self.builder.call(func, parametros, name= 'chamadaFun' )
+            
+            
+            if(var.type != chamadaFun):
+                if('i32' in str(var.type)):
+                    chamadaFun = self.builder.fptosi(chamadaFun, ir.IntType(32))
+                else:
+                    chamadaFun = self.builder.sitofp(chamadaFun, ir.FloatType())
+
             self.builder.store(chamadaFun, var)
 
     def calcula_expressao(self, expEsquerda, operador, expDireita, var):
+        
         if(operador == "+"):
             return self.builder.add(expEsquerda, expDireita, name="add_"+var, flags=())
         elif(operador == "-"):
@@ -405,7 +437,7 @@ class Geracao():
 
         if('i32' in str(var.type)):
             valor = self.builder.fptosi(valor, ir.IntType(32))        
-        
+                
         self.builder.store(valor, var)
             
     def escreva(self,no):
@@ -419,10 +451,9 @@ class Geracao():
                 escrevaFlut = ir.Function(self.modulo, ir.FunctionType(ir.FloatType(), [ir.FloatType()]), 'escrevaFlutuante')
                 self.builder.call(escrevaFlut, [var])	
             
-
 def geracaoCodico(data):
-    # no = semanticaGeracodigo(data, False)
-    no = semanticaGeracodigo(data)
+    no = semanticaGeracodigo(data, False)
+    # no = semanticaGeracodigo(data)
     ger = Geracao(ir.Module('LUIZ2'),no)
     print(str(ger.modulo))
     arquivo = open('gera.ll', 'w')

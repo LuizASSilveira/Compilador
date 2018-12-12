@@ -1,119 +1,96 @@
 strict graph G {
 	node [color=lightblue2 style=filled]
-	61590192 [label=programa]
-	62070192 [label=lista_declaracoes]
-	61590192 -- 62070192
-	62070192 [label=lista_declaracoes]
-	62033616 [label=lista_declaracoes]
-	62070192 -- 62033616
-	62033616 [label=lista_declaracoes]
-	61590448 [label=declaracao_variaveis]
-	62033616 -- 61590448
-	61590448 [label=declaracao_variaveis]
-	62068368 [label=inteiro]
-	61590448 -- 62068368
-	62068368 [label=inteiro]
-	61590256 [label=a]
-	61590448 -- 61590256
-	61590256 [label=a]
-	62069008 [label=declaracao_funcao]
-	62070192 -- 62069008
-	62069008 [label=declaracao_funcao]
-	62067056 [label=tipo]
-	62069008 -- 62067056
-	1858146642 [label=inteiro]
-	62067056 -- 1858146642
-	62067056 [label=tipo]
-	62067856 [label=cabecalho]
-	62069008 -- 62067856
-	1835261122 [label=principal]
-	62067856 -- 1835261122
-	62067856 [label=cabecalho]
-	62066832 [label=lista_parametros]
-	62067856 -- 62066832
-	62066832 [label=lista_parametros]
-	62067280 [label=vazio]
-	62066832 -- 62067280
-	62067280 [label=vazio]
-	62070096 [label=corpo]
-	62067856 -- 62070096
-	62070096 [label=corpo]
-	62067504 [label=declaracao_variaveis]
-	62070096 -- 62067504
-	62067504 [label=declaracao_variaveis]
-	62067440 [label=inteiro]
-	62067504 -- 62067440
-	62067440 [label=inteiro]
-	62067344 [label=ret]
-	62067504 -- 62067344
-	62067344 [label=ret]
-	62068048 [label=atribuicao]
-	62070096 -- 62068048
-	62068048 [label=atribuicao]
-	62067472 [label=var]
-	62068048 -- 62067472
-	1799838565 [label=a]
-	62067472 -- 1799838565
-	62067472 [label=var]
-	62067632 [label=numero]
-	62068048 -- 62067632
-	17258465925 [label=10]
-	62067632 -- 17258465925
-	62067632 [label=numero]
-	62069360 [label=se]
-	62070096 -- 62069360
-	62069360 [label=se]
-	62068624 [label=expressao]
-	62069360 -- 62068624
-	62068624 [label=expressao]
-	62068560 [label=expressao_simples]
-	62068624 -- 62068560
-	62068560 [label=expressao_simples]
-	62067984 [label=">"]
-	62068560 -- 62067984
-	62067984 [label=">"]
-	62068528 [label=a]
-	62067984 -- 62068528
-	62068528 [label=a]
-	62068432 [label=5]
-	62067984 -- 62068432
-	62068432 [label=5]
-	62069264 [label=corpo]
-	62069360 -- 62069264
-	62069264 [label=corpo]
-	62069168 [label=atribuicao]
-	62069264 -- 62069168
-	62069168 [label=atribuicao]
-	62068592 [label=var]
-	62069168 -- 62068592
-	1862671847 [label=ret]
-	62068592 -- 1862671847
-	62068592 [label=var]
-	62068720 [label=numero]
-	62069168 -- 62068720
-	17258475367 [label=1]
-	62068720 -- 17258475367
-	62068720 [label=numero]
-	62069872 [label=corpo]
-	62069360 -- 62069872
-	62069872 [label=corpo]
-	62069776 [label=atribuicao]
-	62069872 -- 62069776
-	62069776 [label=atribuicao]
-	62069200 [label=var]
-	62069776 -- 62069200
-	1862682807 [label=ret]
-	62069200 -- 1862682807
-	62069200 [label=var]
-	62069328 [label=numero]
-	62069776 -- 62069328
-	62069328 [label=numero]
-	62070032 [label=retorna]
-	62070096 -- 62070032
-	62070032 [label=retorna]
-	62067760 [label=var]
-	62070032 -- 62067760
-	1862667045 [label=ret]
-	62067760 -- 1862667045
-	62067760 [label=var]
+	61431088 [label=programa]
+	61430768 [label=declaracao_funcao]
+	61431088 -- 61430768
+	61430768 [label=declaracao_funcao]
+	61174544 [label=tipo]
+	61430768 -- 61174544
+	1846035361 [label=inteiro]
+	61174544 -- 1846035361
+	61174544 [label=tipo]
+	61946480 [label=cabecalho]
+	61430768 -- 61946480
+	1821859441 [label=principal]
+	61946480 -- 1821859441
+	61946480 [label=cabecalho]
+	61430864 [label=lista_parametros]
+	61946480 -- 61430864
+	61430864 [label=lista_parametros]
+	61894640 [label=vazio]
+	61430864 -- 61894640
+	61894640 [label=vazio]
+	61947152 [label=corpo]
+	61946480 -- 61947152
+	61947152 [label=corpo]
+	61944240 [label=declaracao_variaveis]
+	61947152 -- 61944240
+	61944240 [label=declaracao_variaveis]
+	61944784 [label=inteiro]
+	61944240 -- 61944784
+	61944784 [label=inteiro]
+	61944496 [label=x]
+	61944240 -- 61944496
+	61944496 [label=x]
+	61944816 [label=declaracao_variaveis]
+	61947152 -- 61944816
+	61944816 [label=declaracao_variaveis]
+	61944432 [label=flutuante]
+	61944816 -- 61944432
+	61944432 [label=flutuante]
+	61944624 [label=y]
+	61944816 -- 61944624
+	61944624 [label=y]
+	61945328 [label=atribuicao]
+	61947152 -- 61945328
+	61945328 [label=atribuicao]
+	61944688 [label=var]
+	61945328 -- 61944688
+	1417472724 [label=x]
+	61944688 -- 1417472724
+	61944688 [label=var]
+	61944912 [label=numero]
+	61945328 -- 61944912
+	61944912 [label=numero]
+	61945776 [label=atribuicao]
+	61947152 -- 61945776
+	61945776 [label=atribuicao]
+	61944848 [label=var]
+	61945776 -- 61944848
+	1794212084 [label=y]
+	61944848 -- 1794212084
+	61944848 [label=var]
+	61945168 [label=numero]
+	61945776 -- 61945168
+	61945168 [label=numero]
+	61945936 [label=leia]
+	61947152 -- 61945936
+	61945936 [label=leia]
+	61945360 [label=x]
+	61945936 -- 61945360
+	61945360 [label=x]
+	61945968 [label=leia]
+	61947152 -- 61945968
+	61945968 [label=leia]
+	61945072 [label=y]
+	61945968 -- 61945072
+	61945072 [label=y]
+	61946384 [label=escreva]
+	61947152 -- 61946384
+	61946384 [label=escreva]
+	61945488 [label=x]
+	61946384 -- 61945488
+	61945488 [label=x]
+	61946736 [label=escreva]
+	61947152 -- 61946736
+	61946736 [label=escreva]
+	61945584 [label=y]
+	61946736 -- 61945584
+	61945584 [label=y]
+	61947088 [label=retorna]
+	61947152 -- 61947088
+	61947088 [label=retorna]
+	61947024 [label=0]
+	61947088 -- 61947024
+	61947024 [label=0]
 }

@@ -3,7 +3,7 @@ inteiro: soma
 
 inteiro principal()
 	n := 10
-	soma := 0
+	soma := 1
 	repita
 		soma := soma + n
 		n := n - 1

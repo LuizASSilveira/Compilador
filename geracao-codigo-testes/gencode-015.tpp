@@ -1,7 +1,6 @@
 {Parametros de função}
 
-{inteiro func(inteiro: p1, flutuante: p2)}
-inteiro func(inteiro: p1, inteiro: p2)
+inteiro func(inteiro: p1, flutuante: p2)
   inteiro: r
   retorna(r)
 fim

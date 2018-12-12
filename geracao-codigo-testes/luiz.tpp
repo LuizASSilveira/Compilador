@@ -1,9 +1,9 @@
-inteiro daniel()
-    inteiro: jonas
-    jonas :=23
-fim
+inteiro: danilo
 
 inteiro principal()
-    daniel()
-    retorna(10)
+	{danilo := 10}
+	inteiro: marcos
+	danilo := 10.2 + 2.2
+	marcos := danilo
+	retorna(10)
 fim
